@@ -192,7 +192,7 @@ export function HomePage({ onNavigate }: { onNavigate: (page: string) => void })
             <div className="flex items-center gap-2">
               <Award className="w-5 h-5 text-[#D4AF37] flex-shrink-0" />
               <div className="flex items-baseline gap-1">
-                <span className="text-[#5C4033]">Since 2020</span>
+                <span className="text-[#5C4033]">Since 2025</span>
                 <span className="text-xs text-[#5C4033]/60">Serving Kenya</span>
               </div>
             </div>

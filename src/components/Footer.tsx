@@ -55,7 +55,7 @@ export function Footer({ onNavigate }: FooterProps) {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
                 <Phone className="w-4 h-4 mt-0.5 text-[#D4AF37]" />
-                <span>+254 700 123 456</span>
+                <span>+254 745 319042</span>
               </li>
               <li className="flex items-start gap-2">
                 <Mail className="w-4 h-4 mt-0.5 text-[#D4AF37]" />

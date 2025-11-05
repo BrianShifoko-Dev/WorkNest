@@ -27,11 +27,11 @@ export function TopMiniMenu() {
         <div className="flex justify-between items-center flex-wrap gap-2">
           <div className="flex items-center gap-4 md:gap-6 flex-wrap text-sm">
             <a
-              href="tel:+254700123456"
+              href="tel:+254 745 319042"
               className="flex items-center gap-2 hover:text-[#D4AF37] transition-colors"
             >
               <Phone className="w-3.5 h-3.5" />
-              <span>+254 700 123 456</span>
+              <span>+254 745 319042</span>
             </a>
             <div className="flex items-center gap-2">
               <Clock className="w-3.5 h-3.5 text-[#D4AF37]" />
