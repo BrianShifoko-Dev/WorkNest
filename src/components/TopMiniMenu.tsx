@@ -1,4 +1,13 @@
-import { Phone, Clock, MapPin, Facebook, Twitter, Instagram, Linkedin, Globe, ChevronDown } from "lucide-react";
+import {
+  Phone,
+  Clock,
+  MapPin,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Globe,
+  ChevronDown,
+} from "lucide-react";
 import { useLanguage } from "./LanguageContext";
 import {
   DropdownMenu,
@@ -19,7 +28,7 @@ export function TopMiniMenu() {
     { code: "pt" as const, name: "Português", flag: "🇵🇹" },
   ];
 
-  const currentLang = languages.find(l => l.code === language);
+  const currentLang = languages.find((l) => l.code === language);
 
   return (
     <div className="bg-[#5C4033] text-[#FFFFF0] py-2.5 border-b border-[#D4AF37]/20">
@@ -27,11 +36,11 @@ export function TopMiniMenu() {
         <div className="flex justify-between items-center flex-wrap gap-2">
           <div className="flex items-center gap-4 md:gap-6 flex-wrap text-sm">
             <a
-              href="tel:+254 745 319042"
+              href="tel:+254700123456"
               className="flex items-center gap-2 hover:text-[#D4AF37] transition-colors"
             >
               <Phone className="w-3.5 h-3.5" />
-              <span>+254 745 319042</span>
+              <span>254 745 319 042</span>
             </a>
             <div className="flex items-center gap-2">
               <Clock className="w-3.5 h-3.5 text-[#D4AF37]" />
@@ -44,16 +53,47 @@ export function TopMiniMenu() {
           </div>
           <div className="flex items-center gap-4">
             <div className="hidden md:flex items-center gap-3">
-              <a href="https://facebook.com/finaleworkspace" target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF37] transition-colors">
+              <a
+                href="https://facebook.com/finaleworkspace"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#D4AF37] transition-colors"
+                aria-label="Facebook"
+              >
                 <Facebook className="w-3.5 h-3.5" />
               </a>
-              <a href="https://twitter.com/finaleworkspace" target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF37] transition-colors">
-                <Twitter className="w-3.5 h-3.5" />
+              <a
+                href="https://twitter.com/finaleworkspace"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#D4AF37] transition-colors"
+                aria-label="X (formerly Twitter)"
+              >
+                <svg
+                  className="w-3.5 h-3.5"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
               </a>
-              <a href="https://instagram.com/finaleworkspace" target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF37] transition-colors">
+              <a
+                href="https://instagram.com/finaleworkspace"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#D4AF37] transition-colors"
+                aria-label="Instagram"
+              >
                 <Instagram className="w-3.5 h-3.5" />
               </a>
-              <a href="https://linkedin.com/company/finaleworkspace" target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF37] transition-colors">
+              <a
+                href="https://linkedin.com/company/finaleworkspace"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#D4AF37] transition-colors"
+                aria-label="LinkedIn"
+              >
                 <Linkedin className="w-3.5 h-3.5" />
               </a>
             </div>
@@ -61,16 +101,23 @@ export function TopMiniMenu() {
               <DropdownMenu>
                 <DropdownMenuTrigger className="flex items-center gap-2 text-xs hover:text-[#D4AF37] transition-colors">
                   <Globe className="w-3.5 h-3.5" />
-                  <span>{currentLang?.flag} {currentLang?.code.toUpperCase()}</span>
+                  <span>
+                    {currentLang?.flag} {currentLang?.code.toUpperCase()}
+                  </span>
                   <ChevronDown className="w-3 h-3" />
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="bg-white border-[#5C4033]/20">
+                <DropdownMenuContent
+                  align="end"
+                  className="bg-white border-[#5C4033]/20"
+                >
                   {languages.map((lang) => (
                     <DropdownMenuItem
                       key={lang.code}
                       onClick={() => setLanguage(lang.code)}
                       className={`flex items-center gap-2 cursor-pointer ${
-                        language === lang.code ? "bg-[#D4AF37]/10 text-[#5C4033]" : "text-[#5C4033]/80"
+                        language === lang.code
+                          ? "bg-[#D4AF37]/10 text-[#5C4033]"
+                          : "text-[#5C4033]/80"
                       }`}
                     >
                       <span>{lang.flag}</span>

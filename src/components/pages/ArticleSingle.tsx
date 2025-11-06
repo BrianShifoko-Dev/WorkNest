@@ -1,12 +1,20 @@
-import { Clock, User, Calendar, Share2, ArrowRight, MessageCircle, Mail } from "lucide-react";
-import { Facebook, Twitter, Linkedin, Link as LinkIcon } from "lucide-react";
+import {
+  Clock,
+  User,
+  Calendar,
+  Share2,
+  ArrowRight,
+  MessageCircle,
+  Mail,
+} from "lucide-react";
+import { Facebook, Linkedin, Link as LinkIcon } from "lucide-react";
 import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { Breadcrumbs } from "../Breadcrumbs";
 import { useState } from "react";
-import { toast } from "sonner@2.0.3";
+import { toast } from "sonner";
 
 interface ArticleSingleProps {
   onNavigate: (page: string, data?: any) => void;
@@ -28,26 +36,30 @@ export function ArticleSingle({ onNavigate, articleSlug }: ArticleSingleProps) {
     authorTitle: "Community Manager",
     date: "November 1, 2025",
     readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1626187777040-ffb7cb2c5450?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjb3dvcmtpbmclMjBzcGFjZXxlbnwxfHx8fDE3NjIxNTc0NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    image:
+      "https://images.unsplash.com/photo-1626187777040-ffb7cb2c5450?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjb3dvcmtpbmclMjBzcGFjZXxlbnwxfHx8fDE3NjIxNTc0NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
   };
 
   const relatedArticles = [
     {
       title: "From Startup to Scale-up: Nairobi Entrepreneur's Journey",
       category: "Success Stories",
-      image: "https://images.unsplash.com/photo-1640109341881-1cd3eaf50909?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBvZmZpY2UlMjB3b3Jrc3BhY2V8ZW58MXx8fHwxNzYyMjMzNjI3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      image:
+        "https://images.unsplash.com/photo-1640109341881-1cd3eaf50909?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBvZmZpY2UlMjB3b3Jrc3BhY2V8ZW58MXx8fHwxNzYyMjMzNjI3fDA&ixlib=rb-4.1.0&q=80&w=1080",
       readTime: "8 min",
     },
     {
       title: "Kenyan-Inspired Workspace Design",
       category: "Design Inspirations",
-      image: "https://images.unsplash.com/photo-1692133226337-55e513450a32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcml2YXRlJTIwb2ZmaWNlJTIwcm9vbXxlbnwxfHx8fDE3NjIyMzM2Mjd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      image:
+        "https://images.unsplash.com/photo-1692133226337-55e513450a32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcml2YXRlJTIwb2ZmaWNlJTIwcm9vbXxlbnwxfHx8fDE3NjIyMzM2Mjd8MA&ixlib=rb-4.1.0&q=80&w=1080",
       readTime: "6 min",
     },
     {
       title: "Coffee Culture Meets Work Culture",
       category: "Inside Kenya Spaces",
-      image: "https://images.unsplash.com/photo-1669131196140-49591336b13e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjByZXN0YXVyYW50JTIwY2FmZXxlbnwxfHx8fDE3NjIyMzM2Mjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      image:
+        "https://images.unsplash.com/photo-1669131196140-49591336b13e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjByZXN0YXVyYW50JTIwY2FmZXxlbnwxfHx8fDE3NjIyMzM2Mjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
       readTime: "5 min",
     },
   ];
@@ -61,17 +73,23 @@ export function ArticleSingle({ onNavigate, articleSlug }: ArticleSingleProps) {
   const handleShare = async (platform: string) => {
     const url = window.location.href;
     const text = article.title;
-    
+
     let shareUrl = "";
     switch (platform) {
       case "facebook":
-        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+          url
+        )}`;
         break;
       case "twitter":
-        shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
+        shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+          url
+        )}&text=${encodeURIComponent(text)}`;
         break;
       case "linkedin":
-        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+          url
+        )}`;
         break;
       case "copy":
         // Fallback method for copying text when Clipboard API is blocked
@@ -89,7 +107,7 @@ export function ArticleSingle({ onNavigate, articleSlug }: ArticleSingleProps) {
           textArea.focus();
           textArea.select();
           try {
-            document.execCommand('copy');
+            document.execCommand("copy");
             toast.success("Link copied to clipboard!");
           } catch (error) {
             toast.error("Failed to copy link. Please copy manually: " + url);
@@ -98,7 +116,7 @@ export function ArticleSingle({ onNavigate, articleSlug }: ArticleSingleProps) {
         }
         return;
     }
-    
+
     if (shareUrl) {
       window.open(shareUrl, "_blank", "width=600,height=400");
     }
@@ -134,7 +152,7 @@ export function ArticleSingle({ onNavigate, articleSlug }: ArticleSingleProps) {
                 {article.category}
               </Badge>
               <h1 className="text-5xl text-[#5C4033] mb-6">{article.title}</h1>
-              
+
               {/* Meta */}
               <div className="flex flex-wrap items-center gap-6 text-sm text-[#5C4033]/70 pb-6 border-b border-[#5C4033]/10">
                 <div className="flex items-center gap-3">
@@ -143,7 +161,9 @@ export function ArticleSingle({ onNavigate, articleSlug }: ArticleSingleProps) {
                   </div>
                   <div>
                     <p className="text-[#5C4033]">{article.author}</p>
-                    <p className="text-xs text-[#5C4033]/50">{article.authorTitle}</p>
+                    <p className="text-xs text-[#5C4033]/50">
+                      {article.authorTitle}
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
@@ -166,9 +186,16 @@ export function ArticleSingle({ onNavigate, articleSlug }: ArticleSingleProps) {
                   <button
                     onClick={() => handleShare("twitter")}
                     className="text-[#D4AF37] hover:text-[#B8941F] transition-colors"
-                    aria-label="Share on Twitter"
+                    aria-label="Share on X (formerly Twitter)"
                   >
-                    <Twitter className="w-4 h-4" />
+                    <svg
+                      className="w-4 h-4"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
                   </button>
                   <button
                     onClick={() => handleShare("linkedin")}
@@ -192,54 +219,78 @@ export function ArticleSingle({ onNavigate, articleSlug }: ArticleSingleProps) {
             <div className="prose prose-lg max-w-none">
               {/* Introduction */}
               <p className="text-xl text-[#5C4033]/80 leading-relaxed mb-8">
-                Kenya's tech ecosystem is experiencing unprecedented growth, and Eldoret has emerged as an 
-                unexpected hub for innovation. Remote workers, digital nomads, and distributed teams are 
-                discovering the advantages of working from premium coworking spaces in this vibrant city.
+                Kenya's tech ecosystem is experiencing unprecedented growth, and
+                Eldoret has emerged as an unexpected hub for innovation. Remote
+                workers, digital nomads, and distributed teams are discovering
+                the advantages of working from premium coworking spaces in this
+                vibrant city.
               </p>
 
-              <h2 className="text-3xl text-[#5C4033] mb-4 mt-12">The Rise of Remote Work in Kenya</h2>
+              <h2 className="text-3xl text-[#5C4033] mb-4 mt-12">
+                The Rise of Remote Work in Kenya
+              </h2>
               <p className="text-[#5C4033]/80 mb-6">
-                The global shift to remote work has created new opportunities for Kenyan professionals. With 
-                reliable internet infrastructure, a growing tech-savvy workforce, and competitive costs, 
-                Eldoret has become an attractive location for companies seeking regional hubs in East Africa.
+                The global shift to remote work has created new opportunities
+                for Kenyan professionals. With reliable internet infrastructure,
+                a growing tech-savvy workforce, and competitive costs, Eldoret
+                has become an attractive location for companies seeking regional
+                hubs in East Africa.
               </p>
               <p className="text-[#5C4033]/80 mb-6">
-                At Finale Workspace, we've witnessed this transformation firsthand. Our members include software 
-                developers working for Silicon Valley startups, consultants serving European clients, and local 
-                entrepreneurs building the next generation of African tech solutions.
+                At Finale Workspace, we've witnessed this transformation
+                firsthand. Our members include software developers working for
+                Silicon Valley startups, consultants serving European clients,
+                and local entrepreneurs building the next generation of African
+                tech solutions.
               </p>
 
               {/* Pull Quote */}
               <div className="my-12 p-8 bg-[#FFFFF0] border-l-4 border-[#D4AF37] rounded-r-lg">
                 <p className="text-2xl text-[#5C4033] italic">
-                  "Finding Finale was a game-changer for our remote team. The professional environment, 
-                  reliable connectivity, and vibrant community helped us stay productive and connected."
+                  "Finding Finale was a game-changer for our remote team. The
+                  professional environment, reliable connectivity, and vibrant
+                  community helped us stay productive and connected."
                 </p>
                 <p className="text-sm text-[#5C4033]/60 mt-4">
                   — James Kariuki, Engineering Lead at TechFlow Africa
                 </p>
               </div>
 
-              <h2 className="text-3xl text-[#5C4033] mb-4 mt-12">Why Remote Teams Choose Eldoret</h2>
+              <h2 className="text-3xl text-[#5C4033] mb-4 mt-12">
+                Why Remote Teams Choose Eldoret
+              </h2>
               <p className="text-[#5C4033]/80 mb-6">
                 Several factors make Eldoret an ideal location for remote work:
               </p>
               <ul className="space-y-3 mb-6 text-[#5C4033]/80">
                 <li className="flex items-start gap-3">
                   <span className="w-2 h-2 bg-[#D4AF37] rounded-full mt-2 flex-shrink-0" />
-                  <span><strong>Cost Efficiency:</strong> Lower operating costs compared to Nairobi while maintaining high-quality infrastructure</span>
+                  <span>
+                    <strong>Cost Efficiency:</strong> Lower operating costs
+                    compared to Nairobi while maintaining high-quality
+                    infrastructure
+                  </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="w-2 h-2 bg-[#D4AF37] rounded-full mt-2 flex-shrink-0" />
-                  <span><strong>Strategic Location:</strong> Easy access to other East African markets and international airports</span>
+                  <span>
+                    <strong>Strategic Location:</strong> Easy access to other
+                    East African markets and international airports
+                  </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="w-2 h-2 bg-[#D4AF37] rounded-full mt-2 flex-shrink-0" />
-                  <span><strong>Growing Talent Pool:</strong> Access to skilled professionals from local universities and training programs</span>
+                  <span>
+                    <strong>Growing Talent Pool:</strong> Access to skilled
+                    professionals from local universities and training programs
+                  </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="w-2 h-2 bg-[#D4AF37] rounded-full mt-2 flex-shrink-0" />
-                  <span><strong>Quality of Life:</strong> Pleasant climate, safe neighborhoods, and balanced lifestyle</span>
+                  <span>
+                    <strong>Quality of Life:</strong> Pleasant climate, safe
+                    neighborhoods, and balanced lifestyle
+                  </span>
                 </li>
               </ul>
 
@@ -251,40 +302,50 @@ export function ArticleSingle({ onNavigate, articleSlug }: ArticleSingleProps) {
                   className="w-full"
                 />
                 <p className="text-sm text-[#5C4033]/60 p-4 bg-[#FFFFF0]">
-                  Eldoret's growing skyline reflects Kenya's expanding business opportunities
+                  Eldoret's growing skyline reflects Kenya's expanding business
+                  opportunities
                 </p>
               </div>
 
-              <h2 className="text-3xl text-[#5C4033] mb-4 mt-12">Success Stories from Our Community</h2>
+              <h2 className="text-3xl text-[#5C4033] mb-4 mt-12">
+                Success Stories from Our Community
+              </h2>
               <p className="text-[#5C4033]/80 mb-6">
-                The proof is in the results. Remote teams working from Finale have achieved remarkable milestones:
+                The proof is in the results. Remote teams working from Finale
+                have achieved remarkable milestones:
               </p>
               <p className="text-[#5C4033]/80 mb-6">
-                A fintech startup grew from 3 to 18 employees in just 14 months. A digital marketing agency 
-                tripled their client base while maintaining work-life balance. An international NGO established 
+                A fintech startup grew from 3 to 18 employees in just 14 months.
+                A digital marketing agency tripled their client base while
+                maintaining work-life balance. An international NGO established
                 their East African operations center, creating 25 local jobs.
               </p>
               <p className="text-[#5C4033]/80 mb-6">
-                These success stories share common threads: access to professional workspace, reliable 
-                infrastructure, and a supportive business community that fosters collaboration and innovation.
+                These success stories share common threads: access to
+                professional workspace, reliable infrastructure, and a
+                supportive business community that fosters collaboration and
+                innovation.
               </p>
             </div>
 
             {/* CTA Banner */}
             <div className="my-16 bg-gradient-to-r from-[#D4AF37] to-[#B8941F] rounded-lg p-8 text-center">
-              <h3 className="text-2xl text-[#5C4033] mb-4">Ready to Join Our Community?</h3>
+              <h3 className="text-2xl text-[#5C4033] mb-4">
+                Ready to Join Our Community?
+              </h3>
               <p className="text-[#5C4033]/80 mb-6 max-w-2xl mx-auto">
-                Experience the perfect blend of professional workspace, cutting-edge amenities, 
-                and vibrant community that helps remote teams thrive.
+                Experience the perfect blend of professional workspace,
+                cutting-edge amenities, and vibrant community that helps remote
+                teams thrive.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
-                <Button 
+                <Button
                   onClick={() => onNavigate("book-tour")}
                   className="bg-[#5C4033] hover:bg-[#4A3329] text-white"
                 >
                   Book a Tour
                 </Button>
-                <Button 
+                <Button
                   onClick={() => onNavigate("products")}
                   variant="outline"
                   className="border-[#5C4033] text-[#5C4033] bg-white hover:bg-[#5C4033] hover:text-white"
@@ -296,54 +357,72 @@ export function ArticleSingle({ onNavigate, articleSlug }: ArticleSingleProps) {
 
             {/* Final Thoughts */}
             <div className="prose prose-lg max-w-none">
-              <h2 className="text-3xl text-[#5C4033] mb-4 mt-12">Looking Ahead</h2>
+              <h2 className="text-3xl text-[#5C4033] mb-4 mt-12">
+                Looking Ahead
+              </h2>
               <p className="text-[#5C4033]/80 mb-6">
-                As remote work continues to reshape the global employment landscape, Eldoret is positioned 
-                to become a major player in Kenya's digital economy. The combination of infrastructure 
-                investment, growing talent pool, and supportive business environment creates ideal conditions 
-                for remote teams to flourish.
+                As remote work continues to reshape the global employment
+                landscape, Eldoret is positioned to become a major player in
+                Kenya's digital economy. The combination of infrastructure
+                investment, growing talent pool, and supportive business
+                environment creates ideal conditions for remote teams to
+                flourish.
               </p>
               <p className="text-[#5C4033]/80 mb-6">
-                Whether you're a solo entrepreneur, a growing startup, or an established company exploring 
-                East African opportunities, Finale Workspace provides the foundation for your success story.
+                Whether you're a solo entrepreneur, a growing startup, or an
+                established company exploring East African opportunities, Finale
+                Workspace provides the foundation for your success story.
               </p>
             </div>
 
             {/* Share */}
             <div className="mt-12 pt-8 border-t border-[#5C4033]/10">
-              <p className="text-sm text-[#5C4033]/60 mb-4">Share this article:</p>
+              <p className="text-sm text-[#5C4033]/60 mb-4">
+                Share this article:
+              </p>
               <div className="flex gap-3">
-                <Button 
-                  variant="outline" 
-                  size="sm" 
+                <Button
+                  variant="outline"
+                  size="sm"
                   onClick={() => handleShare("twitter")}
                   className="border-[#5C4033]/20 text-[#5C4033] hover:bg-[#D4AF37]/10"
                 >
-                  <Twitter className="w-4 h-4 mr-2" />
-                  Twitter
+                  <svg
+                    className="w-4 h-4 mr-2"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                  </svg>
+                  X
                 </Button>
-                <Button 
-                  variant="outline" 
-                  size="sm" 
+                <Button
+                  variant="outline"
+                  size="sm"
                   onClick={() => handleShare("linkedin")}
                   className="border-[#5C4033]/20 text-[#5C4033] hover:bg-[#D4AF37]/10"
                 >
                   <Linkedin className="w-4 h-4 mr-2" />
                   LinkedIn
                 </Button>
-                <Button 
-                  variant="outline" 
-                  size="sm" 
+                <Button
+                  variant="outline"
+                  size="sm"
                   onClick={() => handleShare("facebook")}
                   className="border-[#5C4033]/20 text-[#5C4033] hover:bg-[#D4AF37]/10"
                 >
                   <Facebook className="w-4 h-4 mr-2" />
                   Facebook
                 </Button>
-                <Button 
-                  variant="outline" 
-                  size="sm" 
-                  onClick={() => window.location.href = `mailto:?subject=${encodeURIComponent(article.title)}&body=${encodeURIComponent(window.location.href)}`}
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() =>
+                    (window.location.href = `mailto:?subject=${encodeURIComponent(
+                      article.title
+                    )}&body=${encodeURIComponent(window.location.href)}`)
+                  }
                   className="border-[#5C4033]/20 text-[#5C4033] hover:bg-[#D4AF37]/10"
                 >
                   <Mail className="w-4 h-4 mr-2" />
@@ -408,21 +487,29 @@ export function ArticleSingle({ onNavigate, articleSlug }: ArticleSingleProps) {
             <form onSubmit={handleCommentSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm text-[#5C4033] mb-2">Name *</label>
+                  <label className="block text-sm text-[#5C4033] mb-2">
+                    Name *
+                  </label>
                   <Input
                     value={commentData.name}
-                    onChange={(e) => setCommentData({ ...commentData, name: e.target.value })}
+                    onChange={(e) =>
+                      setCommentData({ ...commentData, name: e.target.value })
+                    }
                     placeholder="Your full name"
                     required
                     className="border-[#5C4033]/20"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm text-[#5C4033] mb-2">Email *</label>
+                  <label className="block text-sm text-[#5C4033] mb-2">
+                    Email *
+                  </label>
                   <Input
                     type="email"
                     value={commentData.email}
-                    onChange={(e) => setCommentData({ ...commentData, email: e.target.value })}
+                    onChange={(e) =>
+                      setCommentData({ ...commentData, email: e.target.value })
+                    }
                     placeholder="your@email.com"
                     required
                     className="border-[#5C4033]/20"
@@ -430,17 +517,24 @@ export function ArticleSingle({ onNavigate, articleSlug }: ArticleSingleProps) {
                 </div>
               </div>
               <div>
-                <label className="block text-sm text-[#5C4033] mb-2">Your Comment *</label>
+                <label className="block text-sm text-[#5C4033] mb-2">
+                  Your Comment *
+                </label>
                 <Textarea
                   value={commentData.comment}
-                  onChange={(e) => setCommentData({ ...commentData, comment: e.target.value })}
+                  onChange={(e) =>
+                    setCommentData({ ...commentData, comment: e.target.value })
+                  }
                   placeholder="Share your thoughts..."
                   rows={6}
                   required
                   className="border-[#5C4033]/20"
                 />
               </div>
-              <Button type="submit" className="bg-[#D4AF37] hover:bg-[#B8941F] text-[#5C4033]">
+              <Button
+                type="submit"
+                className="bg-[#D4AF37] hover:bg-[#B8941F] text-[#5C4033]"
+              >
                 Submit Comment
               </Button>
             </form>
