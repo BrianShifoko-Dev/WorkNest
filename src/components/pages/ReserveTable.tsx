@@ -83,11 +83,13 @@ export function ReserveTable({ onNavigate }: { onNavigate: (page: string) => voi
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <div className="w-16 h-1 bg-[#D4AF37] mb-6 mx-auto" />
-            <h2 className="text-[#5C4033] mb-6">Where Business Meets Culinary Excellence</h2>
+            <h2 className="text-[#5C4033] mb-6">
+              Where Business Meets Culinary Excellence
+            </h2>
             <p className="text-xl text-[#5C4033]/70 mb-8">
-              Our in-house restaurant combines gourmet cuisine with a professional atmosphere, 
-              making it the perfect spot for business lunches, client meetings, or a relaxing break 
-              from your workday.
+              Our in-house restaurant combines gourmet cuisine with a
+              professional atmosphere, making it the perfect spot for business
+              lunches, client meetings, or a relaxing break from your workday.
             </p>
             <div className="grid md:grid-cols-4 gap-6 mt-12">
               <div className="text-center">
@@ -119,7 +121,9 @@ export function ReserveTable({ onNavigate }: { onNavigate: (page: string) => voi
       <section className="py-16 bg-[#FFFFF0]">
         <div className="container mx-auto px-4">
           <div className="w-16 h-1 bg-[#D4AF37] mb-6 mx-auto" />
-          <h2 className="text-center text-[#5C4033] mb-4">Featured This Week</h2>
+          <h2 className="text-center text-[#5C4033] mb-4">
+            Featured This Week
+          </h2>
           <p className="text-center text-[#5C4033]/70 mb-12 max-w-2xl mx-auto">
             A taste of what awaits you at our restaurant
           </p>
@@ -139,15 +143,19 @@ export function ReserveTable({ onNavigate }: { onNavigate: (page: string) => voi
                 <div className="p-6">
                   <div className="flex justify-between items-start mb-2">
                     <h3 className="text-lg text-[#5C4033]">{item.name}</h3>
-                    <Badge className="bg-[#D4AF37] text-[#5C4033]">{item.price}</Badge>
+                    <Badge className="bg-[#D4AF37] text-[#5C4033]">
+                      {item.price}
+                    </Badge>
                   </div>
-                  <p className="text-sm text-[#5C4033]/70">{item.description}</p>
+                  <p className="text-sm text-[#5C4033]/70">
+                    {item.description}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
           <div className="text-center mt-8">
-            <Button 
+            <Button
               onClick={() => onNavigate("menu")}
               variant="outline"
               className="border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#5C4033]"
@@ -169,8 +177,12 @@ export function ReserveTable({ onNavigate }: { onNavigate: (page: string) => voi
                 <div className="w-16 h-16 bg-[#D4AF37]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <highlight.icon className="w-8 h-8 text-[#D4AF37]" />
                 </div>
-                <h3 className="text-lg text-[#5C4033] mb-2">{highlight.title}</h3>
-                <p className="text-sm text-[#5C4033]/70">{highlight.description}</p>
+                <h3 className="text-lg text-[#5C4033] mb-2">
+                  {highlight.title}
+                </h3>
+                <p className="text-sm text-[#5C4033]/70">
+                  {highlight.description}
+                </p>
               </div>
             ))}
           </div>
@@ -182,28 +194,44 @@ export function ReserveTable({ onNavigate }: { onNavigate: (page: string) => voi
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <div className="w-16 h-1 bg-[#D4AF37] mb-6 mx-auto" />
-            <h2 className="text-center text-[#5C4033] mb-4">Make a Reservation</h2>
+            <h2 className="text-center text-[#5C4033] mb-4">
+              Make a Reservation
+            </h2>
             <p className="text-center text-[#5C4033]/70 mb-12 max-w-2xl mx-auto">
-              Secure your table for breakfast, lunch, or an afternoon coffee meeting. 
-              Walk-ins welcome based on availability.
+              Secure your table for breakfast, lunch, or an afternoon coffee
+              meeting. Walk-ins welcome based on availability.
             </p>
 
-            <form onSubmit={handleSubmit} className="bg-white rounded-lg p-8 shadow-refined-lg border border-[#5C4033]/10">
+            <form
+              onSubmit={handleSubmit}
+              className="bg-white rounded-lg p-8 shadow-refined-lg border border-[#5C4033]/10"
+            >
               <div className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm text-[#5C4033] mb-2">Reservation Date *</label>
+                    <label className="block text-sm text-[#5C4033] mb-2">
+                      Reservation Date *
+                    </label>
                     <Input
                       type="date"
                       value={formData.date}
-                      onChange={(e) => setFormData({ ...formData, date: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, date: e.target.value })
+                      }
                       required
                       className="border-[#5C4033]/20"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm text-[#5C4033] mb-2">Preferred Time *</label>
-                    <Select value={formData.time} onValueChange={(value) => setFormData({ ...formData, time: value })}>
+                    <label className="block text-sm text-[#5C4033] mb-2">
+                      Preferred Time *
+                    </label>
+                    <Select
+                      value={formData.time}
+                      onValueChange={(value) =>
+                        setFormData({ ...formData, time: value })
+                      }
+                    >
                       <SelectTrigger className="border-[#5C4033]/20">
                         <SelectValue placeholder="Select time" />
                       </SelectTrigger>
@@ -225,8 +253,15 @@ export function ReserveTable({ onNavigate }: { onNavigate: (page: string) => voi
                 </div>
 
                 <div>
-                  <label className="block text-sm text-[#5C4033] mb-2">Number of Guests *</label>
-                  <Select value={formData.guests} onValueChange={(value) => setFormData({ ...formData, guests: value })}>
+                  <label className="block text-sm text-[#5C4033] mb-2">
+                    Number of Guests *
+                  </label>
+                  <Select
+                    value={formData.guests}
+                    onValueChange={(value) =>
+                      setFormData({ ...formData, guests: value })
+                    }
+                  >
                     <SelectTrigger className="border-[#5C4033]/20">
                       <SelectValue placeholder="Select number" />
                     </SelectTrigger>
@@ -236,7 +271,9 @@ export function ReserveTable({ onNavigate }: { onNavigate: (page: string) => voi
                           {num} {num === 1 ? "Guest" : "Guests"}
                         </SelectItem>
                       ))}
-                      <SelectItem value="9+">9+ Guests (Contact for group bookings)</SelectItem>
+                      <SelectItem value="9+">
+                        9+ Guests (Contact for group bookings)
+                      </SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -245,21 +282,29 @@ export function ReserveTable({ onNavigate }: { onNavigate: (page: string) => voi
                   <h3 className="text-sm text-[#5C4033] mb-4">Your Details</h3>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm text-[#5C4033] mb-2">Full Name *</label>
+                      <label className="block text-sm text-[#5C4033] mb-2">
+                        Full Name *
+                      </label>
                       <Input
                         value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({ ...formData, name: e.target.value })
+                        }
                         placeholder="John Doe"
                         required
                         className="border-[#5C4033]/20"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm text-[#5C4033] mb-2">Email Address *</label>
+                      <label className="block text-sm text-[#5C4033] mb-2">
+                        Email Address *
+                      </label>
                       <Input
                         type="email"
                         value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({ ...formData, email: e.target.value })
+                        }
                         placeholder="john@email.com"
                         required
                         className="border-[#5C4033]/20"
@@ -267,12 +312,16 @@ export function ReserveTable({ onNavigate }: { onNavigate: (page: string) => voi
                     </div>
                   </div>
                   <div className="mt-6">
-                    <label className="block text-sm text-[#5C4033] mb-2">Phone Number *</label>
+                    <label className="block text-sm text-[#5C4033] mb-2">
+                      Phone Number *
+                    </label>
                     <Input
                       type="tel"
                       value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      placeholder="+254 700 123 456"
+                      onChange={(e) =>
+                        setFormData({ ...formData, phone: e.target.value })
+                      }
+                      placeholder="+254 745 319 042"
                       required
                       className="border-[#5C4033]/20"
                     />
@@ -280,17 +329,27 @@ export function ReserveTable({ onNavigate }: { onNavigate: (page: string) => voi
                 </div>
 
                 <div>
-                  <label className="block text-sm text-[#5C4033] mb-2">Special Requests</label>
+                  <label className="block text-sm text-[#5C4033] mb-2">
+                    Special Requests
+                  </label>
                   <Textarea
                     value={formData.specialRequests}
-                    onChange={(e) => setFormData({ ...formData, specialRequests: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        specialRequests: e.target.value,
+                      })
+                    }
                     placeholder="Dietary restrictions, seating preferences, occasion, etc."
                     rows={4}
                     className="border-[#5C4033]/20"
                   />
                 </div>
 
-                <Button type="submit" className="w-full bg-[#D4AF37] hover:bg-[#B8941F] text-[#5C4033]">
+                <Button
+                  type="submit"
+                  className="w-full bg-[#D4AF37] hover:bg-[#B8941F] text-[#5C4033]"
+                >
                   Confirm Reservation
                 </Button>
                 <p className="text-xs text-center text-[#5C4033]/60">
@@ -307,16 +366,17 @@ export function ReserveTable({ onNavigate }: { onNavigate: (page: string) => voi
         <div className="container mx-auto px-4 text-center">
           <h3 className="text-white mb-4">Questions About Our Restaurant?</h3>
           <p className="text-white/90 mb-8 max-w-2xl mx-auto">
-            Contact our restaurant team for group bookings, catering services, or dietary accommodations.
+            Contact our restaurant team for group bookings, catering services,
+            or dietary accommodations.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Button 
+            <Button
               onClick={() => onNavigate("contact")}
               className="bg-[#D4AF37] hover:bg-[#B8941F] text-[#5C4033]"
             >
               Contact Restaurant
             </Button>
-            <Button 
+            <Button
               onClick={() => onNavigate("menu")}
               variant="outline"
               className="border-white text-[rgb(92,64,51)] hover:bg-white hover:text-[#5C4033]"

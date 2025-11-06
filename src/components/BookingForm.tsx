@@ -2,9 +2,15 @@ import { useState } from "react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "./ui/select";
 import { Textarea } from "./ui/textarea";
-import { toast } from "sonner@2.0.3";
+import { toast } from "sonner";
 import { Calendar, User, Mail, Phone, ArrowRight, Clock } from "lucide-react";
 
 interface BookingFormProps {
@@ -28,16 +34,16 @@ export function BookingForm({ variant = "hero" }: BookingFormProps) {
   const getTodayDate = () => {
     const today = new Date();
     const year = today.getFullYear();
-    const month = String(today.getMonth() + 1).padStart(2, '0');
-    const day = String(today.getDate()).padStart(2, '0');
+    const month = String(today.getMonth() + 1).padStart(2, "0");
+    const day = String(today.getDate()).padStart(2, "0");
     return `${year}-${month}-${day}`;
   };
 
   // Get current time in HH:MM format for min time
   const getCurrentTime = () => {
     const now = new Date();
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const hours = String(now.getHours()).padStart(2, "0");
+    const minutes = String(now.getMinutes()).padStart(2, "0");
     return `${hours}:${minutes}`;
   };
 
@@ -54,7 +60,9 @@ export function BookingForm({ variant = "hero" }: BookingFormProps) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Booking submitted:", formData);
-    toast.success("Booking request submitted! Our team will contact you shortly.");
+    toast.success(
+      "Booking request submitted! Our team will contact you shortly."
+    );
     setFormData({
       name: "",
       email: "",
@@ -79,44 +87,58 @@ export function BookingForm({ variant = "hero" }: BookingFormProps) {
         data-api="bookings"
         style={{
           transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-          background: "linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 50%, rgba(92, 64, 51, 0.25) 100%)",
+          background:
+            "linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 50%, rgba(92, 64, 51, 0.25) 100%)",
           backdropFilter: "blur(40px) saturate(180%) brightness(1.1)",
           WebkitBackdropFilter: "blur(40px) saturate(180%) brightness(1.1)",
           borderColor: "rgba(255, 255, 255, 0.25)",
           borderWidth: "1px",
-          boxShadow: "0 8px 32px rgba(31, 38, 135, 0.37), 0 0 0 1px rgba(255, 255, 255, 0.18) inset, 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 100px rgba(212, 175, 55, 0.15)",
+          boxShadow:
+            "0 8px 32px rgba(31, 38, 135, 0.37), 0 0 0 1px rgba(255, 255, 255, 0.18) inset, 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 100px rgba(212, 175, 55, 0.15)",
         }}
       >
         {/* Desktop/Tablet: Two-Row Layout */}
-        <div className="hidden lg:block px-5 py-5">
+        <div className="hidden lg:block px-5 pt-[0px] pr-[20px] pb-[20px] pl-[20px] mt-[0px] mr-[0px] mb-[20px] ml-[0px]">
           {/* Row 1: Personal Information */}
           <div className="flex items-end gap-2 mb-3">
             {/* Segment 1: Full Name */}
             <div className="BookingSegment_Column flex-1 px-3 py-2 transition-all duration-300 min-w-0">
-              <label htmlFor="hero-name" className="block text-xs text-[#D4AF37] mb-2 uppercase tracking-wider" style={{ fontWeight: 500 }}>
+              <label
+                htmlFor="hero-name"
+                className="block text-xs text-[#D4AF37] mb-2 uppercase tracking-wider"
+                style={{ fontWeight: 500 }}
+              >
                 <User className="w-3.5 h-3.5 inline mr-1.5" />
                 Full Name
               </label>
               <Input
                 id="hero-name"
                 value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
                 required
                 className="h-11 px-3.5 rounded-lg text-[#2C1810] border placeholder:text-[#5C4033]/70 focus:border-[#D4AF37]/80 focus:ring-2 focus:ring-[#D4AF37]/40 transition-all duration-300"
                 placeholder="Enter your name"
                 style={{
                   background: "rgba(255, 255, 255, 0.4)",
                   backdropFilter: "blur(20px) saturate(180%) brightness(1.2)",
-                  WebkitBackdropFilter: "blur(20px) saturate(180%) brightness(1.2)",
+                  WebkitBackdropFilter:
+                    "blur(20px) saturate(180%) brightness(1.2)",
                   borderColor: "rgba(255, 255, 255, 0.4)",
-                  boxShadow: "0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(212, 175, 55, 0.2) inset",
+                  boxShadow:
+                    "0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(212, 175, 55, 0.2) inset",
                 }}
               />
             </div>
 
             {/* Segment 2: Email */}
             <div className="BookingSegment_Column flex-1 px-3 py-2 transition-all duration-300 min-w-0">
-              <label htmlFor="hero-email" className="block text-xs text-[#D4AF37] mb-2 uppercase tracking-wider" style={{ fontWeight: 500 }}>
+              <label
+                htmlFor="hero-email"
+                className="block text-xs text-[#D4AF37] mb-2 uppercase tracking-wider"
+                style={{ fontWeight: 500 }}
+              >
                 <Mail className="w-3.5 h-3.5 inline mr-1.5" />
                 Email
               </label>
@@ -124,23 +146,31 @@ export function BookingForm({ variant = "hero" }: BookingFormProps) {
                 id="hero-email"
                 type="email"
                 value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
                 required
                 className="h-11 px-3.5 rounded-lg text-[#2C1810] border placeholder:text-[#5C4033]/70 focus:border-[#D4AF37]/80 focus:ring-2 focus:ring-[#D4AF37]/40 transition-all duration-300"
                 placeholder="your@email.com"
                 style={{
                   background: "rgba(255, 255, 255, 0.4)",
                   backdropFilter: "blur(20px) saturate(180%) brightness(1.2)",
-                  WebkitBackdropFilter: "blur(20px) saturate(180%) brightness(1.2)",
+                  WebkitBackdropFilter:
+                    "blur(20px) saturate(180%) brightness(1.2)",
                   borderColor: "rgba(255, 255, 255, 0.4)",
-                  boxShadow: "0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(212, 175, 55, 0.2) inset",
+                  boxShadow:
+                    "0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(212, 175, 55, 0.2) inset",
                 }}
               />
             </div>
 
             {/* Segment 3: Phone */}
             <div className="BookingSegment_Column flex-1 px-3 py-2 transition-all duration-300 min-w-0">
-              <label htmlFor="hero-phone" className="block text-xs text-[#D4AF37] mb-2 uppercase tracking-wider" style={{ fontWeight: 500 }}>
+              <label
+                htmlFor="hero-phone"
+                className="block text-xs text-[#D4AF37] mb-2 uppercase tracking-wider"
+                style={{ fontWeight: 500 }}
+              >
                 <Phone className="w-3.5 h-3.5 inline mr-1.5" />
                 Phone
               </label>
@@ -148,16 +178,20 @@ export function BookingForm({ variant = "hero" }: BookingFormProps) {
                 id="hero-phone"
                 type="tel"
                 value={formData.phone}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, phone: e.target.value })
+                }
                 required
                 className="h-11 px-3.5 rounded-lg text-[#2C1810] border placeholder:text-[#5C4033]/70 focus:border-[#D4AF37]/80 focus:ring-2 focus:ring-[#D4AF37]/40 transition-all duration-300"
                 placeholder="+254 7XX XXX XXX"
                 style={{
                   background: "rgba(255, 255, 255, 0.4)",
                   backdropFilter: "blur(20px) saturate(180%) brightness(1.2)",
-                  WebkitBackdropFilter: "blur(20px) saturate(180%) brightness(1.2)",
+                  WebkitBackdropFilter:
+                    "blur(20px) saturate(180%) brightness(1.2)",
                   borderColor: "rgba(255, 255, 255, 0.4)",
-                  boxShadow: "0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(212, 175, 55, 0.2) inset",
+                  boxShadow:
+                    "0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(212, 175, 55, 0.2) inset",
                 }}
               />
             </div>
@@ -167,49 +201,93 @@ export function BookingForm({ variant = "hero" }: BookingFormProps) {
           <div className="flex items-end gap-2">
             {/* Segment 4: Space Type */}
             <div className="BookingSegment_Column flex-1 px-3 py-2 transition-all duration-300 min-w-0">
-              <label htmlFor="hero-spaceType" className="block text-xs text-[#D4AF37] mb-2 uppercase tracking-wider" style={{ fontWeight: 500 }}>
+              <label
+                htmlFor="hero-spaceType"
+                className="block text-xs text-[#D4AF37] mb-2 uppercase tracking-wider"
+                style={{ fontWeight: 500 }}
+              >
                 Space Type
               </label>
-              <Select 
-                value={formData.spaceType} 
-                onValueChange={(value) => setFormData({ ...formData, spaceType: value })}
+              <Select
+                value={formData.spaceType}
+                onValueChange={(value) =>
+                  setFormData({ ...formData, spaceType: value })
+                }
               >
-                <SelectTrigger 
+                <SelectTrigger
                   id="hero-spaceType"
                   className="h-11 px-3.5 rounded-lg text-[#2C1810] border focus:border-[#D4AF37]/80 focus:ring-2 focus:ring-[#D4AF37]/40 transition-all duration-300"
                   style={{
                     background: "rgba(255, 255, 255, 0.4)",
                     backdropFilter: "blur(20px) saturate(180%) brightness(1.2)",
-                    WebkitBackdropFilter: "blur(20px) saturate(180%) brightness(1.2)",
+                    WebkitBackdropFilter:
+                      "blur(20px) saturate(180%) brightness(1.2)",
                     borderColor: "rgba(255, 255, 255, 0.4)",
-                    boxShadow: "0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(212, 175, 55, 0.2) inset",
+                    boxShadow:
+                      "0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(212, 175, 55, 0.2) inset",
                   }}
                 >
                   <SelectValue placeholder="Select workspace" />
                 </SelectTrigger>
-                <SelectContent 
+                <SelectContent
                   className="border"
                   style={{
                     background: "rgba(255, 255, 255, 0.85)",
-                    backdropFilter: "blur(30px) saturate(180%) brightness(1.15)",
-                    WebkitBackdropFilter: "blur(30px) saturate(180%) brightness(1.15)",
+                    backdropFilter:
+                      "blur(30px) saturate(180%) brightness(1.15)",
+                    WebkitBackdropFilter:
+                      "blur(30px) saturate(180%) brightness(1.15)",
                     borderColor: "rgba(255, 255, 255, 0.5)",
                     boxShadow: "0 8px 32px rgba(31, 38, 135, 0.37)",
                   }}
                 >
-                  <SelectItem value="private-office" className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30">Private Office</SelectItem>
-                  <SelectItem value="shared-desk" className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30">Shared Desk</SelectItem>
-                  <SelectItem value="boardroom" className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30">Boardroom</SelectItem>
-                  <SelectItem value="event-space" className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30">Event Space</SelectItem>
-                  <SelectItem value="telephone-booth" className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30">Telephone Booth</SelectItem>
-                  <SelectItem value="kids-space" className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30">Kids Space</SelectItem>
+                  <SelectItem
+                    value="private-office"
+                    className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30"
+                  >
+                    Private Office
+                  </SelectItem>
+                  <SelectItem
+                    value="shared-desk"
+                    className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30"
+                  >
+                    Shared Desk
+                  </SelectItem>
+                  <SelectItem
+                    value="boardroom"
+                    className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30"
+                  >
+                    Boardroom
+                  </SelectItem>
+                  <SelectItem
+                    value="event-space"
+                    className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30"
+                  >
+                    Event Space
+                  </SelectItem>
+                  <SelectItem
+                    value="telephone-booth"
+                    className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30"
+                  >
+                    Telephone Booth
+                  </SelectItem>
+                  <SelectItem
+                    value="kids-space"
+                    className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30"
+                  >
+                    Kids Space
+                  </SelectItem>
                 </SelectContent>
               </Select>
             </div>
 
             {/* Segment 5: Start Date */}
             <div className="BookingSegment_Column flex-1 px-3 py-2 transition-all duration-300 min-w-0">
-              <label htmlFor="hero-date" className="block text-xs text-[#D4AF37] mb-2 uppercase tracking-wider" style={{ fontWeight: 500 }}>
+              <label
+                htmlFor="hero-date"
+                className="block text-xs text-[#D4AF37] mb-2 uppercase tracking-wider"
+                style={{ fontWeight: 500 }}
+              >
                 <Calendar className="w-3.5 h-3.5 inline mr-1.5" />
                 Start Date
               </label>
@@ -217,16 +295,20 @@ export function BookingForm({ variant = "hero" }: BookingFormProps) {
                 id="hero-date"
                 type="date"
                 value={formData.date}
-                onChange={(e) => setFormData({ ...formData, date: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, date: e.target.value })
+                }
                 min={getTodayDate()}
                 required
                 className="h-11 px-3.5 rounded-lg text-[#2C1810] border focus:border-[#D4AF37]/80 focus:ring-2 focus:ring-[#D4AF37]/40 transition-all duration-300"
                 style={{
                   background: "rgba(255, 255, 255, 0.4)",
                   backdropFilter: "blur(20px) saturate(180%) brightness(1.2)",
-                  WebkitBackdropFilter: "blur(20px) saturate(180%) brightness(1.2)",
+                  WebkitBackdropFilter:
+                    "blur(20px) saturate(180%) brightness(1.2)",
                   borderColor: "rgba(255, 255, 255, 0.4)",
-                  boxShadow: "0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(212, 175, 55, 0.2) inset",
+                  boxShadow:
+                    "0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(212, 175, 55, 0.2) inset",
                   colorScheme: "light",
                 }}
               />
@@ -234,7 +316,11 @@ export function BookingForm({ variant = "hero" }: BookingFormProps) {
 
             {/* Segment 5.5: Time */}
             <div className="BookingSegment_Column flex-1 px-3 py-2 transition-all duration-300 min-w-0">
-              <label htmlFor="hero-time" className="block text-xs text-[#D4AF37] mb-2 uppercase tracking-wider" style={{ fontWeight: 500 }}>
+              <label
+                htmlFor="hero-time"
+                className="block text-xs text-[#D4AF37] mb-2 uppercase tracking-wider"
+                style={{ fontWeight: 500 }}
+              >
                 <Clock className="w-3.5 h-3.5 inline mr-1.5" />
                 Time
               </label>
@@ -242,16 +328,20 @@ export function BookingForm({ variant = "hero" }: BookingFormProps) {
                 id="hero-time"
                 type="time"
                 value={formData.time}
-                onChange={(e) => setFormData({ ...formData, time: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, time: e.target.value })
+                }
                 min={getMinTime()}
                 required
                 className="h-11 px-3.5 rounded-lg text-[#2C1810] border focus:border-[#D4AF37]/80 focus:ring-2 focus:ring-[#D4AF37]/40 transition-all duration-300"
                 style={{
                   background: "rgba(255, 255, 255, 0.4)",
                   backdropFilter: "blur(20px) saturate(180%) brightness(1.2)",
-                  WebkitBackdropFilter: "blur(20px) saturate(180%) brightness(1.2)",
+                  WebkitBackdropFilter:
+                    "blur(20px) saturate(180%) brightness(1.2)",
                   borderColor: "rgba(255, 255, 255, 0.4)",
-                  boxShadow: "0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(212, 175, 55, 0.2) inset",
+                  boxShadow:
+                    "0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(212, 175, 55, 0.2) inset",
                   colorScheme: "light",
                 }}
               />
@@ -259,40 +349,70 @@ export function BookingForm({ variant = "hero" }: BookingFormProps) {
 
             {/* Segment 6: Payment Plan */}
             <div className="BookingSegment_Column flex-1 px-3 py-2 transition-all duration-300 min-w-0">
-              <label htmlFor="hero-paymentPlan" className="block text-xs text-[#D4AF37] mb-2 uppercase tracking-wider" style={{ fontWeight: 500 }}>
+              <label
+                htmlFor="hero-paymentPlan"
+                className="block text-xs text-[#D4AF37] mb-2 uppercase tracking-wider"
+                style={{ fontWeight: 500 }}
+              >
                 Payment Plan
               </label>
-              <Select 
-                value={formData.paymentPlan} 
-                onValueChange={(value) => setFormData({ ...formData, paymentPlan: value })}
+              <Select
+                value={formData.paymentPlan}
+                onValueChange={(value) =>
+                  setFormData({ ...formData, paymentPlan: value })
+                }
               >
-                <SelectTrigger 
+                <SelectTrigger
                   id="hero-paymentPlan"
                   className="h-11 px-3.5 rounded-lg text-[#2C1810] border focus:border-[#D4AF37]/80 focus:ring-2 focus:ring-[#D4AF37]/40 transition-all duration-300"
                   style={{
                     background: "rgba(255, 255, 255, 0.4)",
                     backdropFilter: "blur(20px) saturate(180%) brightness(1.2)",
-                    WebkitBackdropFilter: "blur(20px) saturate(180%) brightness(1.2)",
+                    WebkitBackdropFilter:
+                      "blur(20px) saturate(180%) brightness(1.2)",
                     borderColor: "rgba(255, 255, 255, 0.4)",
-                    boxShadow: "0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(212, 175, 55, 0.2) inset",
+                    boxShadow:
+                      "0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(212, 175, 55, 0.2) inset",
                   }}
                 >
                   <SelectValue placeholder="Select plan" />
                 </SelectTrigger>
-                <SelectContent 
+                <SelectContent
                   className="border"
                   style={{
                     background: "rgba(255, 255, 255, 0.85)",
-                    backdropFilter: "blur(30px) saturate(180%) brightness(1.15)",
-                    WebkitBackdropFilter: "blur(30px) saturate(180%) brightness(1.15)",
+                    backdropFilter:
+                      "blur(30px) saturate(180%) brightness(1.15)",
+                    WebkitBackdropFilter:
+                      "blur(30px) saturate(180%) brightness(1.15)",
                     borderColor: "rgba(255, 255, 255, 0.5)",
                     boxShadow: "0 8px 32px rgba(31, 38, 135, 0.37)",
                   }}
                 >
-                  <SelectItem value="hourly" className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30">Hourly</SelectItem>
-                  <SelectItem value="daily" className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30">Daily</SelectItem>
-                  <SelectItem value="monthly" className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30">Monthly</SelectItem>
-                  <SelectItem value="yearly" className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30">Yearly</SelectItem>
+                  <SelectItem
+                    value="hourly"
+                    className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30"
+                  >
+                    Hourly
+                  </SelectItem>
+                  <SelectItem
+                    value="daily"
+                    className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30"
+                  >
+                    Daily
+                  </SelectItem>
+                  <SelectItem
+                    value="monthly"
+                    className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30"
+                  >
+                    Monthly
+                  </SelectItem>
+                  <SelectItem
+                    value="yearly"
+                    className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30"
+                  >
+                    Yearly
+                  </SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -305,7 +425,8 @@ export function BookingForm({ variant = "hero" }: BookingFormProps) {
                 background: "linear-gradient(135deg, #D4AF37 0%, #C5A028 100%)",
                 color: "#5C4033",
                 border: "2px solid rgba(212, 175, 55, 0.4)",
-                boxShadow: "0 0 20px rgba(212, 175, 55, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1) inset",
+                boxShadow:
+                  "0 0 20px rgba(212, 175, 55, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1) inset",
                 fontWeight: 600,
               }}
             >
@@ -318,29 +439,41 @@ export function BookingForm({ variant = "hero" }: BookingFormProps) {
         {/* Mobile/Tablet: Stacked Layout */}
         <div className="lg:hidden space-y-4 p-6">
           <div className="BookingSegment_Column">
-            <label htmlFor="hero-name-mobile" className="block text-xs text-[#D4AF37] mb-2 uppercase tracking-wider" style={{ fontWeight: 500 }}>
+            <label
+              htmlFor="hero-name-mobile"
+              className="block text-xs text-[#D4AF37] mb-2 uppercase tracking-wider"
+              style={{ fontWeight: 500 }}
+            >
               <User className="w-3.5 h-3.5 inline mr-1.5" />
               Full Name
             </label>
             <Input
               id="hero-name-mobile"
               value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, name: e.target.value })
+              }
               required
               className="h-12 px-4 rounded-lg text-[#2C1810] border placeholder:text-[#5C4033]/70 focus:border-[#D4AF37]/80 focus:ring-2 focus:ring-[#D4AF37]/40 transition-all duration-300"
               placeholder="Enter your name"
               style={{
                 background: "rgba(255, 255, 255, 0.4)",
                 backdropFilter: "blur(20px) saturate(180%) brightness(1.2)",
-                WebkitBackdropFilter: "blur(20px) saturate(180%) brightness(1.2)",
+                WebkitBackdropFilter:
+                  "blur(20px) saturate(180%) brightness(1.2)",
                 borderColor: "rgba(255, 255, 255, 0.4)",
-                boxShadow: "0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(212, 175, 55, 0.2) inset",
+                boxShadow:
+                  "0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(212, 175, 55, 0.2) inset",
               }}
             />
           </div>
 
           <div className="BookingSegment_Column">
-            <label htmlFor="hero-email-mobile" className="block text-xs text-[#D4AF37] mb-2 uppercase tracking-wider" style={{ fontWeight: 500 }}>
+            <label
+              htmlFor="hero-email-mobile"
+              className="block text-xs text-[#D4AF37] mb-2 uppercase tracking-wider"
+              style={{ fontWeight: 500 }}
+            >
               <Mail className="w-3.5 h-3.5 inline mr-1.5" />
               Email
             </label>
@@ -348,22 +481,30 @@ export function BookingForm({ variant = "hero" }: BookingFormProps) {
               id="hero-email-mobile"
               type="email"
               value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
               required
               className="h-12 px-4 rounded-lg text-[#2C1810] border placeholder:text-[#5C4033]/70 focus:border-[#D4AF37]/80 focus:ring-2 focus:ring-[#D4AF37]/40 transition-all duration-300"
               placeholder="your@email.com"
               style={{
                 background: "rgba(255, 255, 255, 0.4)",
                 backdropFilter: "blur(20px) saturate(180%) brightness(1.2)",
-                WebkitBackdropFilter: "blur(20px) saturate(180%) brightness(1.2)",
+                WebkitBackdropFilter:
+                  "blur(20px) saturate(180%) brightness(1.2)",
                 borderColor: "rgba(255, 255, 255, 0.4)",
-                boxShadow: "0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(212, 175, 55, 0.2) inset",
+                boxShadow:
+                  "0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(212, 175, 55, 0.2) inset",
               }}
             />
           </div>
 
           <div className="BookingSegment_Column">
-            <label htmlFor="hero-phone-mobile" className="block text-xs text-[#D4AF37] mb-2 uppercase tracking-wider" style={{ fontWeight: 500 }}>
+            <label
+              htmlFor="hero-phone-mobile"
+              className="block text-xs text-[#D4AF37] mb-2 uppercase tracking-wider"
+              style={{ fontWeight: 500 }}
+            >
               <Phone className="w-3.5 h-3.5 inline mr-1.5" />
               Phone
             </label>
@@ -371,63 +512,110 @@ export function BookingForm({ variant = "hero" }: BookingFormProps) {
               id="hero-phone-mobile"
               type="tel"
               value={formData.phone}
-              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, phone: e.target.value })
+              }
               required
               className="h-12 px-4 rounded-lg text-[#2C1810] border placeholder:text-[#5C4033]/70 focus:border-[#D4AF37]/80 focus:ring-2 focus:ring-[#D4AF37]/40 transition-all duration-300"
               placeholder="+254 7XX XXX XXX"
               style={{
                 background: "rgba(255, 255, 255, 0.4)",
                 backdropFilter: "blur(20px) saturate(180%) brightness(1.2)",
-                WebkitBackdropFilter: "blur(20px) saturate(180%) brightness(1.2)",
+                WebkitBackdropFilter:
+                  "blur(20px) saturate(180%) brightness(1.2)",
                 borderColor: "rgba(255, 255, 255, 0.4)",
-                boxShadow: "0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(212, 175, 55, 0.2) inset",
+                boxShadow:
+                  "0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(212, 175, 55, 0.2) inset",
               }}
             />
           </div>
 
           <div className="BookingSegment_Column">
-            <label htmlFor="hero-spaceType-mobile" className="block text-xs text-[#D4AF37] mb-2 uppercase tracking-wider" style={{ fontWeight: 500 }}>
+            <label
+              htmlFor="hero-spaceType-mobile"
+              className="block text-xs text-[#D4AF37] mb-2 uppercase tracking-wider"
+              style={{ fontWeight: 500 }}
+            >
               Space Type
             </label>
-            <Select 
-              value={formData.spaceType} 
-              onValueChange={(value) => setFormData({ ...formData, spaceType: value })}
+            <Select
+              value={formData.spaceType}
+              onValueChange={(value) =>
+                setFormData({ ...formData, spaceType: value })
+              }
             >
-              <SelectTrigger 
+              <SelectTrigger
                 id="hero-spaceType-mobile"
                 className="h-12 px-4 rounded-lg text-[#2C1810] border focus:border-[#D4AF37]/80 focus:ring-2 focus:ring-[#D4AF37]/40 transition-all duration-300"
                 style={{
                   background: "rgba(255, 255, 255, 0.4)",
                   backdropFilter: "blur(20px) saturate(180%) brightness(1.2)",
-                  WebkitBackdropFilter: "blur(20px) saturate(180%) brightness(1.2)",
+                  WebkitBackdropFilter:
+                    "blur(20px) saturate(180%) brightness(1.2)",
                   borderColor: "rgba(255, 255, 255, 0.4)",
-                  boxShadow: "0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(212, 175, 55, 0.2) inset",
+                  boxShadow:
+                    "0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(212, 175, 55, 0.2) inset",
                 }}
               >
                 <SelectValue placeholder="Select workspace" />
               </SelectTrigger>
-              <SelectContent 
+              <SelectContent
                 className="border"
                 style={{
                   background: "rgba(255, 255, 255, 0.85)",
                   backdropFilter: "blur(30px) saturate(180%) brightness(1.15)",
-                  WebkitBackdropFilter: "blur(30px) saturate(180%) brightness(1.15)",
+                  WebkitBackdropFilter:
+                    "blur(30px) saturate(180%) brightness(1.15)",
                   borderColor: "rgba(255, 255, 255, 0.5)",
                   boxShadow: "0 8px 32px rgba(31, 38, 135, 0.37)",
                 }}
               >
-                <SelectItem value="private-office" className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30">Private Office</SelectItem>
-                <SelectItem value="shared-desk" className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30">Shared Desk</SelectItem>
-                <SelectItem value="boardroom" className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30">Boardroom</SelectItem>
-                <SelectItem value="event-space" className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30">Event Space</SelectItem>
-                <SelectItem value="telephone-booth" className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30">Telephone Booth</SelectItem>
-                <SelectItem value="kids-space" className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30">Kids Space</SelectItem>
+                <SelectItem
+                  value="private-office"
+                  className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30"
+                >
+                  Private Office
+                </SelectItem>
+                <SelectItem
+                  value="shared-desk"
+                  className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30"
+                >
+                  Shared Desk
+                </SelectItem>
+                <SelectItem
+                  value="boardroom"
+                  className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30"
+                >
+                  Boardroom
+                </SelectItem>
+                <SelectItem
+                  value="event-space"
+                  className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30"
+                >
+                  Event Space
+                </SelectItem>
+                <SelectItem
+                  value="telephone-booth"
+                  className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30"
+                >
+                  Telephone Booth
+                </SelectItem>
+                <SelectItem
+                  value="kids-space"
+                  className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30"
+                >
+                  Kids Space
+                </SelectItem>
               </SelectContent>
             </Select>
           </div>
 
           <div className="BookingSegment_Column">
-            <label htmlFor="hero-date-mobile" className="block text-xs text-[#D4AF37] mb-2 uppercase tracking-wider" style={{ fontWeight: 500 }}>
+            <label
+              htmlFor="hero-date-mobile"
+              className="block text-xs text-[#D4AF37] mb-2 uppercase tracking-wider"
+              style={{ fontWeight: 500 }}
+            >
               <Calendar className="w-3.5 h-3.5 inline mr-1.5" />
               Start Date
             </label>
@@ -435,23 +623,31 @@ export function BookingForm({ variant = "hero" }: BookingFormProps) {
               id="hero-date-mobile"
               type="date"
               value={formData.date}
-              onChange={(e) => setFormData({ ...formData, date: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, date: e.target.value })
+              }
               min={getTodayDate()}
               required
               className="h-12 px-4 rounded-lg text-[#2C1810] border focus:border-[#D4AF37]/80 focus:ring-2 focus:ring-[#D4AF37]/40 transition-all duration-300"
               style={{
                 background: "rgba(255, 255, 255, 0.4)",
                 backdropFilter: "blur(20px) saturate(180%) brightness(1.2)",
-                WebkitBackdropFilter: "blur(20px) saturate(180%) brightness(1.2)",
+                WebkitBackdropFilter:
+                  "blur(20px) saturate(180%) brightness(1.2)",
                 borderColor: "rgba(255, 255, 255, 0.4)",
-                boxShadow: "0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(212, 175, 55, 0.2) inset",
+                boxShadow:
+                  "0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(212, 175, 55, 0.2) inset",
                 colorScheme: "light",
               }}
             />
           </div>
 
           <div className="BookingSegment_Column">
-            <label htmlFor="hero-time-mobile" className="block text-xs text-[#D4AF37] mb-2 uppercase tracking-wider" style={{ fontWeight: 500 }}>
+            <label
+              htmlFor="hero-time-mobile"
+              className="block text-xs text-[#D4AF37] mb-2 uppercase tracking-wider"
+              style={{ fontWeight: 500 }}
+            >
               <Clock className="w-3.5 h-3.5 inline mr-1.5" />
               Time
             </label>
@@ -459,56 +655,89 @@ export function BookingForm({ variant = "hero" }: BookingFormProps) {
               id="hero-time-mobile"
               type="time"
               value={formData.time}
-              onChange={(e) => setFormData({ ...formData, time: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, time: e.target.value })
+              }
               min={getMinTime()}
               required
               className="h-12 px-4 rounded-lg text-[#2C1810] border focus:border-[#D4AF37]/80 focus:ring-2 focus:ring-[#D4AF37]/40 transition-all duration-300"
               style={{
                 background: "rgba(255, 255, 255, 0.4)",
                 backdropFilter: "blur(20px) saturate(180%) brightness(1.2)",
-                WebkitBackdropFilter: "blur(20px) saturate(180%) brightness(1.2)",
+                WebkitBackdropFilter:
+                  "blur(20px) saturate(180%) brightness(1.2)",
                 borderColor: "rgba(255, 255, 255, 0.4)",
-                boxShadow: "0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(212, 175, 55, 0.2) inset",
+                boxShadow:
+                  "0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(212, 175, 55, 0.2) inset",
                 colorScheme: "light",
               }}
             />
           </div>
 
           <div className="BookingSegment_Column">
-            <label htmlFor="hero-paymentPlan-mobile" className="block text-xs text-[#D4AF37] mb-2 uppercase tracking-wider" style={{ fontWeight: 500 }}>
+            <label
+              htmlFor="hero-paymentPlan-mobile"
+              className="block text-xs text-[#D4AF37] mb-2 uppercase tracking-wider"
+              style={{ fontWeight: 500 }}
+            >
               Payment Plan
             </label>
-            <Select 
-              value={formData.paymentPlan} 
-              onValueChange={(value) => setFormData({ ...formData, paymentPlan: value })}
+            <Select
+              value={formData.paymentPlan}
+              onValueChange={(value) =>
+                setFormData({ ...formData, paymentPlan: value })
+              }
             >
-              <SelectTrigger 
+              <SelectTrigger
                 id="hero-paymentPlan-mobile"
                 className="h-12 px-4 rounded-lg text-[#2C1810] border focus:border-[#D4AF37]/80 focus:ring-2 focus:ring-[#D4AF37]/40 transition-all duration-300"
                 style={{
                   background: "rgba(255, 255, 255, 0.4)",
                   backdropFilter: "blur(20px) saturate(180%) brightness(1.2)",
-                  WebkitBackdropFilter: "blur(20px) saturate(180%) brightness(1.2)",
+                  WebkitBackdropFilter:
+                    "blur(20px) saturate(180%) brightness(1.2)",
                   borderColor: "rgba(255, 255, 255, 0.4)",
-                  boxShadow: "0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(212, 175, 55, 0.2) inset",
+                  boxShadow:
+                    "0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(212, 175, 55, 0.2) inset",
                 }}
               >
                 <SelectValue placeholder="Select plan" />
               </SelectTrigger>
-              <SelectContent 
+              <SelectContent
                 className="border"
                 style={{
                   background: "rgba(255, 255, 255, 0.85)",
                   backdropFilter: "blur(30px) saturate(180%) brightness(1.15)",
-                  WebkitBackdropFilter: "blur(30px) saturate(180%) brightness(1.15)",
+                  WebkitBackdropFilter:
+                    "blur(30px) saturate(180%) brightness(1.15)",
                   borderColor: "rgba(255, 255, 255, 0.5)",
                   boxShadow: "0 8px 32px rgba(31, 38, 135, 0.37)",
                 }}
               >
-                <SelectItem value="hourly" className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30">Hourly</SelectItem>
-                <SelectItem value="daily" className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30">Daily</SelectItem>
-                <SelectItem value="monthly" className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30">Monthly</SelectItem>
-                <SelectItem value="yearly" className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30">Yearly</SelectItem>
+                <SelectItem
+                  value="hourly"
+                  className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30"
+                >
+                  Hourly
+                </SelectItem>
+                <SelectItem
+                  value="daily"
+                  className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30"
+                >
+                  Daily
+                </SelectItem>
+                <SelectItem
+                  value="monthly"
+                  className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30"
+                >
+                  Monthly
+                </SelectItem>
+                <SelectItem
+                  value="yearly"
+                  className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30"
+                >
+                  Yearly
+                </SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -521,7 +750,8 @@ export function BookingForm({ variant = "hero" }: BookingFormProps) {
               color: "#5C4033",
               borderRadius: "12px",
               border: "2px solid rgba(212, 175, 55, 0.4)",
-              boxShadow: "0 0 20px rgba(212, 175, 55, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1) inset",
+              boxShadow:
+                "0 0 20px rgba(212, 175, 55, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1) inset",
               fontWeight: 600,
             }}
           >
@@ -624,7 +854,9 @@ export function BookingForm({ variant = "hero" }: BookingFormProps) {
             id="full-email"
             type="email"
             value={formData.email}
-            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, email: e.target.value })
+            }
             required
             className="mt-1 border-[#5C4033]/20 focus:border-[#D4AF37]"
             placeholder="john@example.com"
@@ -640,17 +872,29 @@ export function BookingForm({ variant = "hero" }: BookingFormProps) {
             id="full-phone"
             type="tel"
             value={formData.phone}
-            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, phone: e.target.value })
+            }
             required
             className="mt-1 border-[#5C4033]/20 focus:border-[#D4AF37]"
-            placeholder="+254 700 123 456"
+            placeholder="+254 745 319 042"
           />
         </div>
 
         <div>
-          <Label htmlFor="full-spaceType" className="text-[#5C4033]">Space Type</Label>
-          <Select value={formData.spaceType} onValueChange={(value) => setFormData({ ...formData, spaceType: value })}>
-            <SelectTrigger id="full-spaceType" className="mt-1 border-[#5C4033]/20 focus:border-[#D4AF37]">
+          <Label htmlFor="full-spaceType" className="text-[#5C4033]">
+            Space Type
+          </Label>
+          <Select
+            value={formData.spaceType}
+            onValueChange={(value) =>
+              setFormData({ ...formData, spaceType: value })
+            }
+          >
+            <SelectTrigger
+              id="full-spaceType"
+              className="mt-1 border-[#5C4033]/20 focus:border-[#D4AF37]"
+            >
               <SelectValue placeholder="Select space type" />
             </SelectTrigger>
             <SelectContent>
@@ -697,9 +941,19 @@ export function BookingForm({ variant = "hero" }: BookingFormProps) {
         </div>
 
         <div>
-          <Label htmlFor="full-paymentPlan" className="text-[#5C4033]">Payment Plan</Label>
-          <Select value={formData.paymentPlan} onValueChange={(value) => setFormData({ ...formData, paymentPlan: value })}>
-            <SelectTrigger id="full-paymentPlan" className="mt-1 border-[#5C4033]/20 focus:border-[#D4AF37]">
+          <Label htmlFor="full-paymentPlan" className="text-[#5C4033]">
+            Payment Plan
+          </Label>
+          <Select
+            value={formData.paymentPlan}
+            onValueChange={(value) =>
+              setFormData({ ...formData, paymentPlan: value })
+            }
+          >
+            <SelectTrigger
+              id="full-paymentPlan"
+              className="mt-1 border-[#5C4033]/20 focus:border-[#D4AF37]"
+            >
               <SelectValue placeholder="Select payment plan" />
             </SelectTrigger>
             <SelectContent>
@@ -712,22 +966,30 @@ export function BookingForm({ variant = "hero" }: BookingFormProps) {
         </div>
 
         <div>
-          <Label htmlFor="full-duration" className="text-[#5C4033]">Duration (in days/months)</Label>
+          <Label htmlFor="full-duration" className="text-[#5C4033]">
+            Duration (in days/months)
+          </Label>
           <Input
             id="full-duration"
             value={formData.duration}
-            onChange={(e) => setFormData({ ...formData, duration: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, duration: e.target.value })
+            }
             className="mt-1 border-[#5C4033]/20 focus:border-[#D4AF37]"
             placeholder="e.g., 3 months"
           />
         </div>
 
         <div>
-          <Label htmlFor="full-additionalRequests" className="text-[#5C4033]">Additional Requests</Label>
+          <Label htmlFor="full-additionalRequests" className="text-[#5C4033]">
+            Additional Requests
+          </Label>
           <Textarea
             id="full-additionalRequests"
             value={formData.additionalRequests}
-            onChange={(e) => setFormData({ ...formData, additionalRequests: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, additionalRequests: e.target.value })
+            }
             className="mt-1 border-[#5C4033]/20 focus:border-[#D4AF37]"
             placeholder="Any special requirements?"
             rows={3}

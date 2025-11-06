@@ -33,9 +33,18 @@ import { SiteMap } from "./components/SiteMap";
 import { TermsOfService } from "./components/pages/TermsOfService";
 import { PrivacyPolicy } from "./components/pages/PrivacyPolicy";
 import { PaymentMethods } from "./components/pages/PaymentMethods";
+import { useEffect } from "react";
+
 
 function App() {
   const [currentPage, setCurrentPage] = useState("home");
+
+  useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleNavigate = (page: string) => {
     setCurrentPage(page);

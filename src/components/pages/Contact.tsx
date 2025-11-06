@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Textarea } from "../ui/textarea";
-import { toast } from "sonner@2.0.3";
+import { toast } from "sonner";
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -28,7 +28,8 @@ export function Contact() {
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl mb-4">Contact Us</h1>
           <p className="text-xl max-w-2xl mx-auto">
-            We're here to help. Reach out to us and we'll respond as soon as possible
+            We're here to help. Reach out to us and we'll respond as soon as
+            possible
           </p>
         </div>
       </section>
@@ -47,7 +48,7 @@ export function Contact() {
                   </div>
                   <div>
                     <h4 className="text-[#5C4033] mb-1">Phone</h4>
-                    <p className="text-[#5C4033]/70">+254 700 123 456</p>
+                    <p className="text-[#5C4033]/70">+254 745 319 042</p>
                     <p className="text-[#5C4033]/70">+254 722 987 654</p>
                   </div>
                 </div>
@@ -58,8 +59,12 @@ export function Contact() {
                   </div>
                   <div>
                     <h4 className="text-[#5C4033] mb-1">Email</h4>
-                    <p className="text-[#5C4033]/70">hello@finaleworkspace.co.ke</p>
-                    <p className="text-[#5C4033]/70">bookings@finaleworkspace.co.ke</p>
+                    <p className="text-[#5C4033]/70">
+                      hello@finaleworkspace.co.ke
+                    </p>
+                    <p className="text-[#5C4033]/70">
+                      bookings@finaleworkspace.co.ke
+                    </p>
                   </div>
                 </div>
 
@@ -70,9 +75,11 @@ export function Contact() {
                   <div>
                     <h4 className="text-[#5C4033] mb-1">Address</h4>
                     <p className="text-[#5C4033]/70">
-                      Finale Workspace Kenya<br />
-                      Westlands Business District<br />
-                      Nairobi, Kenya
+                      The   WorkNest Co-working space
+                      <br />
+                      Eldoret
+                      <br />
+                      Eldoret, Kenya
                     </p>
                   </div>
                 </div>
@@ -107,11 +114,15 @@ export function Contact() {
 
                 <div className="space-y-4">
                   <div>
-                    <Label htmlFor="name" className="text-[#5C4033]">Full Name</Label>
+                    <Label htmlFor="name" className="text-[#5C4033]">
+                      Full Name
+                    </Label>
                     <Input
                       id="name"
                       value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, name: e.target.value })
+                      }
                       required
                       className="mt-1 border-[#5C4033]/20 focus:border-[#D4AF37]"
                       placeholder="John Doe"
@@ -119,12 +130,16 @@ export function Contact() {
                   </div>
 
                   <div>
-                    <Label htmlFor="email" className="text-[#5C4033]">Email Address</Label>
+                    <Label htmlFor="email" className="text-[#5C4033]">
+                      Email Address
+                    </Label>
                     <Input
                       id="email"
                       type="email"
                       value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, email: e.target.value })
+                      }
                       required
                       className="mt-1 border-[#5C4033]/20 focus:border-[#D4AF37]"
                       placeholder="john@example.com"
@@ -132,11 +147,15 @@ export function Contact() {
                   </div>
 
                   <div>
-                    <Label htmlFor="subject" className="text-[#5C4033]">Subject</Label>
+                    <Label htmlFor="subject" className="text-[#5C4033]">
+                      Subject
+                    </Label>
                     <Input
                       id="subject"
                       value={formData.subject}
-                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, subject: e.target.value })
+                      }
                       required
                       className="mt-1 border-[#5C4033]/20 focus:border-[#D4AF37]"
                       placeholder="How can we help?"
@@ -144,11 +163,15 @@ export function Contact() {
                   </div>
 
                   <div>
-                    <Label htmlFor="message" className="text-[#5C4033]">Message</Label>
+                    <Label htmlFor="message" className="text-[#5C4033]">
+                      Message
+                    </Label>
                     <Textarea
                       id="message"
                       value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, message: e.target.value })
+                      }
                       required
                       className="mt-1 border-[#5C4033]/20 focus:border-[#D4AF37]"
                       placeholder="Tell us more about your inquiry..."

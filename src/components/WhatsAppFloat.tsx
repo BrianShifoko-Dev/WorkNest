@@ -12,7 +12,7 @@ export function WhatsAppFloat() {
     <button
       onClick={handleClick}
       aria-label="Contact via WhatsApp"
-      className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 group"
+      className="fixed bottom-20 right-4 md:bottom-24 md:right-6 z-40 group"
     >
       <div className="relative">
         {/* Pulse effect */}

@@ -139,18 +139,18 @@ export function MainNavbar({ currentPage, onNavigate }: MainNavbarProps) {
             className="flex items-center cursor-pointer group"
             onClick={() => onNavigate("home")}
           >
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-0">
               {/* Replace this block with your actual logo image */}
               <img
                 src="./logo.svg"
-                alt="WorkNest Logo"
-                className="w-24 h-20 bg-white/95 object-contain transition-transform duration-200 group-hover:scale-105"
+                alt="The WorkNest Logo"
+                className="w-24 h-16 bg-white/95 object-contain transition-transform duration-200 group-hover:scale-105"
               />
-              <div>
-                <div className="text-xl text-[#5C4033] font-semibold">
-                  WorkNest
+              <div className="-ml-1">
+                <div className="text-2xl text-[#5C4033] font-bold">
+                  The WorkNest
                 </div>
-                <div className="text-xs text-[#8B7355]">Workspace Kenya</div>
+                <div className="text-2xs text-[#8B7355]">Co-working space</div>
               </div>
             </div>
           </div>
