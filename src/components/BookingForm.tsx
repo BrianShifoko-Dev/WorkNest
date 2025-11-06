@@ -5,7 +5,7 @@ import { Label } from "./ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
 import { Textarea } from "./ui/textarea";
 import { toast } from "sonner@2.0.3";
-import { Calendar, User, Mail, Phone, ArrowRight } from "lucide-react";
+import { Calendar, User, Mail, Phone, ArrowRight, Clock } from "lucide-react";
 
 interface BookingFormProps {
   variant?: "hero" | "full";
@@ -18,10 +18,38 @@ export function BookingForm({ variant = "hero" }: BookingFormProps) {
     phone: "",
     spaceType: "",
     date: "",
+    time: "",
     duration: "",
     paymentPlan: "",
     additionalRequests: "",
   });
+
+  // Get today's date in YYYY-MM-DD format for min date
+  const getTodayDate = () => {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  };
+
+  // Get current time in HH:MM format for min time
+  const getCurrentTime = () => {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    return `${hours}:${minutes}`;
+  };
+
+  // Check if selected date is today
+  const isSelectedDateToday = () => {
+    return formData.date === getTodayDate();
+  };
+
+  // Get minimum time based on selected date
+  const getMinTime = () => {
+    return isSelectedDateToday() ? getCurrentTime() : undefined;
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,6 +61,7 @@ export function BookingForm({ variant = "hero" }: BookingFormProps) {
       phone: "",
       spaceType: "",
       date: "",
+      time: "",
       duration: "",
       paymentPlan: "",
       additionalRequests: "",
@@ -189,6 +218,32 @@ export function BookingForm({ variant = "hero" }: BookingFormProps) {
                 type="date"
                 value={formData.date}
                 onChange={(e) => setFormData({ ...formData, date: e.target.value })}
+                min={getTodayDate()}
+                required
+                className="h-11 px-3.5 rounded-lg text-[#2C1810] border focus:border-[#D4AF37]/80 focus:ring-2 focus:ring-[#D4AF37]/40 transition-all duration-300"
+                style={{
+                  background: "rgba(255, 255, 255, 0.4)",
+                  backdropFilter: "blur(20px) saturate(180%) brightness(1.2)",
+                  WebkitBackdropFilter: "blur(20px) saturate(180%) brightness(1.2)",
+                  borderColor: "rgba(255, 255, 255, 0.4)",
+                  boxShadow: "0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(212, 175, 55, 0.2) inset",
+                  colorScheme: "light",
+                }}
+              />
+            </div>
+
+            {/* Segment 5.5: Time */}
+            <div className="BookingSegment_Column flex-1 px-3 py-2 transition-all duration-300 min-w-0">
+              <label htmlFor="hero-time" className="block text-xs text-[#D4AF37] mb-2 uppercase tracking-wider" style={{ fontWeight: 500 }}>
+                <Clock className="w-3.5 h-3.5 inline mr-1.5" />
+                Time
+              </label>
+              <Input
+                id="hero-time"
+                type="time"
+                value={formData.time}
+                onChange={(e) => setFormData({ ...formData, time: e.target.value })}
+                min={getMinTime()}
                 required
                 className="h-11 px-3.5 rounded-lg text-[#2C1810] border focus:border-[#D4AF37]/80 focus:ring-2 focus:ring-[#D4AF37]/40 transition-all duration-300"
                 style={{
@@ -234,6 +289,7 @@ export function BookingForm({ variant = "hero" }: BookingFormProps) {
                     boxShadow: "0 8px 32px rgba(31, 38, 135, 0.37)",
                   }}
                 >
+                  <SelectItem value="hourly" className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30">Hourly</SelectItem>
                   <SelectItem value="daily" className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30">Daily</SelectItem>
                   <SelectItem value="monthly" className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30">Monthly</SelectItem>
                   <SelectItem value="yearly" className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30">Yearly</SelectItem>
@@ -380,6 +436,31 @@ export function BookingForm({ variant = "hero" }: BookingFormProps) {
               type="date"
               value={formData.date}
               onChange={(e) => setFormData({ ...formData, date: e.target.value })}
+              min={getTodayDate()}
+              required
+              className="h-12 px-4 rounded-lg text-[#2C1810] border focus:border-[#D4AF37]/80 focus:ring-2 focus:ring-[#D4AF37]/40 transition-all duration-300"
+              style={{
+                background: "rgba(255, 255, 255, 0.4)",
+                backdropFilter: "blur(20px) saturate(180%) brightness(1.2)",
+                WebkitBackdropFilter: "blur(20px) saturate(180%) brightness(1.2)",
+                borderColor: "rgba(255, 255, 255, 0.4)",
+                boxShadow: "0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(212, 175, 55, 0.2) inset",
+                colorScheme: "light",
+              }}
+            />
+          </div>
+
+          <div className="BookingSegment_Column">
+            <label htmlFor="hero-time-mobile" className="block text-xs text-[#D4AF37] mb-2 uppercase tracking-wider" style={{ fontWeight: 500 }}>
+              <Clock className="w-3.5 h-3.5 inline mr-1.5" />
+              Time
+            </label>
+            <Input
+              id="hero-time-mobile"
+              type="time"
+              value={formData.time}
+              onChange={(e) => setFormData({ ...formData, time: e.target.value })}
+              min={getMinTime()}
               required
               className="h-12 px-4 rounded-lg text-[#2C1810] border focus:border-[#D4AF37]/80 focus:ring-2 focus:ring-[#D4AF37]/40 transition-all duration-300"
               style={{
@@ -424,6 +505,7 @@ export function BookingForm({ variant = "hero" }: BookingFormProps) {
                   boxShadow: "0 8px 32px rgba(31, 38, 135, 0.37)",
                 }}
               >
+                <SelectItem value="hourly" className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30">Hourly</SelectItem>
                 <SelectItem value="daily" className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30">Daily</SelectItem>
                 <SelectItem value="monthly" className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30">Monthly</SelectItem>
                 <SelectItem value="yearly" className="text-[#5C4033] hover:bg-[#D4AF37]/20 focus:bg-[#D4AF37]/30">Yearly</SelectItem>
@@ -592,6 +674,23 @@ export function BookingForm({ variant = "hero" }: BookingFormProps) {
             type="date"
             value={formData.date}
             onChange={(e) => setFormData({ ...formData, date: e.target.value })}
+            min={getTodayDate()}
+            required
+            className="mt-1 border-[#5C4033]/20 focus:border-[#D4AF37]"
+          />
+        </div>
+
+        <div>
+          <Label htmlFor="full-time" className="text-[#5C4033]">
+            <Clock className="w-4 h-4 inline mr-2" />
+            Preferred Time
+          </Label>
+          <Input
+            id="full-time"
+            type="time"
+            value={formData.time}
+            onChange={(e) => setFormData({ ...formData, time: e.target.value })}
+            min={getMinTime()}
             required
             className="mt-1 border-[#5C4033]/20 focus:border-[#D4AF37]"
           />
@@ -604,6 +703,7 @@ export function BookingForm({ variant = "hero" }: BookingFormProps) {
               <SelectValue placeholder="Select payment plan" />
             </SelectTrigger>
             <SelectContent>
+              <SelectItem value="hourly">Hourly</SelectItem>
               <SelectItem value="daily">Daily</SelectItem>
               <SelectItem value="monthly">Monthly</SelectItem>
               <SelectItem value="yearly">Yearly</SelectItem>

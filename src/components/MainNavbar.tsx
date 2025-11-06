@@ -140,11 +140,16 @@ export function MainNavbar({ currentPage, onNavigate }: MainNavbarProps) {
             onClick={() => onNavigate("home")}
           >
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-[#D4AF37] rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow duration-200">
-                <span className="text-[#5C4033] text-2xl">W</span>
-              </div>
+              {/* Replace this block with your actual logo image */}
+              <img
+                src="./logo.svg"
+                alt="WorkNest Logo"
+                className="w-24 h-20 bg-white/95 object-contain transition-transform duration-200 group-hover:scale-105"
+              />
               <div>
-                <div className="text-xl text-[#5C4033]">WorkNest</div>
+                <div className="text-xl text-[#5C4033] font-semibold">
+                  WorkNest
+                </div>
                 <div className="text-xs text-[#8B7355]">Workspace Kenya</div>
               </div>
             </div>
@@ -156,7 +161,9 @@ export function MainNavbar({ currentPage, onNavigate }: MainNavbarProps) {
               <div
                 key={item.name}
                 className="relative"
-                onMouseEnter={() => handleMouseEnter(item.name, !!item.dropdown)}
+                onMouseEnter={() =>
+                  handleMouseEnter(item.name, !!item.dropdown)
+                }
                 onMouseLeave={handleMouseLeave}
               >
                 {/* NavLink Component */}
