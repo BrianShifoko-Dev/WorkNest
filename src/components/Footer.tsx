@@ -1,8 +1,16 @@
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import {
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Mail,
+  Phone,
+  MapPin,
+} from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { useState } from "react";
-import { toast } from "sonner@2.0.3";
+import { toast } from "sonner";
 
 interface FooterProps {
   onNavigate?: (page: string) => void;
@@ -23,17 +31,21 @@ export function Footer({ onNavigate }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-[#D4AF37] rounded-lg flex items-center justify-center">
-                <span className="text-[#5C4033]">W</span>
-              </div>
-              <div>
-                <div className="text-lg">WorkNest</div>
-                <div className="text-xs text-[#D4AF37]">Workspace Kenya</div>
-              </div>
+            {/* Logo */}
+            <img
+              src="/logo.svg"
+              alt="WorkNest Logo"
+              className="w-10 h-10 object-contain bg-transparent transition-transform duration-200 hover:scale-105"
+            />
+
+            {/* Text beside logo */}
+            <div>
+              <div className="text-lg text-white font-semibold">WorkNest</div>
+              <div className="text-xs text-[#D4AF37]">Workspace Kenya</div>
             </div>
             <p className="text-sm text-[#FFFFF0]/80 mb-4">
-              Premium coworking and workspace solutions in the heart of Nairobi, Kenya.
+              Premium coworking and workspace solutions in the heart of Nairobi,
+              Kenya.
             </p>
           </div>
 
@@ -41,11 +53,31 @@ export function Footer({ onNavigate }: FooterProps) {
           <div>
             <h4 className="mb-4 text-[#D4AF37]">Quick Links</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-[#D4AF37] transition-colors">Discover Us</a></li>
-              <li><a href="#" className="hover:text-[#D4AF37] transition-colors">Products & Book</a></li>
-              <li><a href="#" className="hover:text-[#D4AF37] transition-colors">Restaurant</a></li>
-              <li><a href="#" className="hover:text-[#D4AF37] transition-colors">Events</a></li>
-              <li><a href="#" className="hover:text-[#D4AF37] transition-colors">Magazine</a></li>
+              <li>
+                <a href="#" className="hover:text-[#D4AF37] transition-colors">
+                  Discover Us
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-[#D4AF37] transition-colors">
+                  Products & Book
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-[#D4AF37] transition-colors">
+                  Restaurant
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-[#D4AF37] transition-colors">
+                  Events
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-[#D4AF37] transition-colors">
+                  Magazine
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -98,18 +130,18 @@ export function Footer({ onNavigate }: FooterProps) {
           <p className="text-sm text-[#FFFFF0]/80">
             © 2025 WorkNest Workspace Kenya. All rights reserved.
           </p>
-          
+
           {/* Legal Links */}
           <div className="flex items-center gap-4 text-sm">
-            <button 
-              onClick={() => onNavigate?.('terms-of-service')}
+            <button
+              onClick={() => onNavigate?.("terms-of-service")}
               className="hover:text-[#D4AF37] transition-colors underline-offset-4 hover:underline"
             >
               Terms of Service
             </button>
             <span className="text-[#FFFFF0]/40">•</span>
-            <button 
-              onClick={() => onNavigate?.('privacy-policy')}
+            <button
+              onClick={() => onNavigate?.("privacy-policy")}
               className="hover:text-[#D4AF37] transition-colors underline-offset-4 hover:underline"
             >
               Privacy Policy

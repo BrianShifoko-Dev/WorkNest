@@ -53,7 +53,7 @@ function App() {
         return <SiteMap onNavigate={handleNavigate} />;
       case "contact":
         return <Contact />;
-        
+
       // Discover Us section
       case "discover":
         return <DiscoverUs onNavigate={handleNavigate} />;
@@ -65,7 +65,7 @@ function App() {
         return <Team onNavigate={handleNavigate} />;
       case "spaces-gallery":
         return <SpacesGallery onNavigate={handleNavigate} />;
-        
+
       // Products & Book section
       case "products":
         return <ProductsBook />;
@@ -79,7 +79,7 @@ function App() {
         return <KidsZone onNavigate={handleNavigate} />;
       case "telephone-booths":
         return <TelephoneBooths onNavigate={handleNavigate} />;
-        
+
       // Get Started section
       case "getstarted":
         return <GetStarted onNavigate={handleNavigate} />;
@@ -91,7 +91,7 @@ function App() {
         return <Pricing onNavigate={handleNavigate} />;
       case "faq":
         return <FAQ onNavigate={handleNavigate} />;
-        
+
       // Restaurant section
       case "restaurant":
         return <Restaurant />;
@@ -101,7 +101,7 @@ function App() {
         return <ReserveTable onNavigate={handleNavigate} />;
       case "special-offers":
         return <Restaurant />;
-        
+
       // Events section
       case "events":
         return <Events onNavigate={handleNavigate} />;
@@ -109,7 +109,7 @@ function App() {
         return <HostEvent onNavigate={handleNavigate} />;
       case "past-events":
         return <Events onNavigate={handleNavigate} />;
-        
+
       // Magazine section
       case "magazine":
       case "workstyle-tips":
@@ -118,17 +118,17 @@ function App() {
         return <Magazine onNavigate={handleNavigate} />;
       case "article":
         return <ArticleSingle onNavigate={handleNavigate} />;
-      
+
       // Legal pages
       case "terms-of-service":
         return <TermsOfService />;
       case "privacy-policy":
         return <PrivacyPolicy />;
-      
+
       // Payment
       case "payment-methods":
         return <PaymentMethods onNavigate={handleNavigate} />;
-        
+
       default:
         return <HomePage onNavigate={handleNavigate} />;
     }
