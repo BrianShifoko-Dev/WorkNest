@@ -33,13 +33,13 @@ export function Footer({ onNavigate }: FooterProps) {
 
               {/* Text beside logo */}
               <div>
-                <div className="text-lg text-white font-semibold">WorkNest</div>
+                <div className="text-lg text-white font-semibold">The WorkNest</div>
                 <div className="text-xs text-[#D4AF37]">Co-working space</div>
               </div>
             </div>
 
             <p className="text-sm text-[#FFFFF0]/80 mb-4">
-              Premium coworking and workspace solutions in the heart of Nairobi,
+              Premium co-working and workspace solutions in the heart of Eldoret,
               Kenya.
             </p>
           </div>
@@ -86,7 +86,7 @@ export function Footer({ onNavigate }: FooterProps) {
               </li>
               <li className="flex items-start gap-2">
                 <Mail className="w-4 h-4 mt-0.5 text-[#D4AF37]" />
-                <span>info@worknest.co.ke</span>
+                <span>info@theworknest.co.ke</span>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 text-[#D4AF37]" />
@@ -123,7 +123,7 @@ export function Footer({ onNavigate }: FooterProps) {
         {/* Bottom Bar */}
         <div className="border-t border-[#FFFFF0]/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-[#FFFFF0]/80">
-            © 2025 WorkNest Workspace Kenya. All rights reserved.
+            © 2025 WorkNest co-working space Kenya. All rights reserved.
           </p>
 
           {/* Legal Links */}

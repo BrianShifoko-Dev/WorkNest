@@ -294,7 +294,7 @@ const navRef = useRef<HTMLDivElement>(null);
 **Finale Workspace Kenya**  
 📍 Eldoret, Kenya  
 📞 +254 700 123 456  
-🕒 Mon-Fri: 8AM - 6PM, Sat: 9AM - 2PM  
+🕒 Mon-Fri: 8AM - 8PM, Sat: 9AM - 2PM  
 
 **Brand Colors:**
 - 🟡 Woody Gold: #D4AF37

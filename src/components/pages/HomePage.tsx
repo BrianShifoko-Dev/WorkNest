@@ -375,7 +375,7 @@ export function HomePage({
               A Space Where Productivity Meets Comfort in Kenya
             </h2>
             <p className="text-[#5C4033]/80">
-              Finale Workspace Kenya redefines professional environments in
+              WorkNest co-Working space Kenya redefines professional environments in
               Eldoret. We combine world-class amenities with authentic Kenyan
               hospitality to create spaces where businesses thrive and
               communities flourish.
@@ -561,7 +561,7 @@ export function HomePage({
       <section className="py-16 bg-[#FFFFF0]" data-section="why-choose-us">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-[#5C4033] mb-4">Why Choose Finale Workspace</h2>
+            <h2 className="text-[#5C4033] mb-4">Why Choose WorkNest co-working space</h2>
             <p className="text-[#5C4033]/70 max-w-2xl mx-auto">
               Experience the difference that premium amenities and thoughtful
               design make
@@ -715,12 +715,12 @@ export function HomePage({
               <ReviewCard
                 challenge="Our startup needed a professional space without the long-term commitment and high costs of a traditional office."
                 solution="Finale provided us with a flexible monthly plan in a beautiful private office, complete with meeting rooms and all amenities."
-                testimonial="Finale Workspace has been instrumental in our growth. The environment is professional yet welcoming, and the flexibility is exactly what we needed."
+                testimonial="WorkNest co-working space has been instrumental in our growth. The environment is professional yet welcoming, and the flexibility is exactly what we needed."
                 clientName="Sarah Kamau"
                 clientRole="CEO, Tech Startup"
               />
               <p className="text-xs text-[#5C4033]/50 text-center mt-2">
-                Member since Jan 2024
+                Member since Nov 2025
               </p>
             </div>
 
@@ -736,7 +736,7 @@ export function HomePage({
                 clientRole="Business Consultant"
               />
               <p className="text-xs text-[#5C4033]/50 text-center mt-2">
-                Member since Mar 2023
+                Member since Nov 2025
               </p>
             </div>
 
@@ -747,12 +747,12 @@ export function HomePage({
               <ReviewCard
                 challenge="We wanted to host a product launch event but couldn't find a venue that offered both elegance and modern technology."
                 solution="Finale's event space provided the perfect blend of sophistication and functionality, with excellent AV equipment and catering options."
-                testimonial="Our event was a huge success! The team at Finale went above and beyond to ensure everything was perfect."
+                testimonial="Our event was a huge success! The team at WorkNest Co-working space went above and beyond to ensure everything was perfect."
                 clientName="Grace Wanjiru"
                 clientRole="Marketing Director"
               />
               <p className="text-xs text-[#5C4033]/50 text-center mt-2">
-                Member since Jul 2024
+                Member since Oct 2025
               </p>
             </div>
           </div>
@@ -1038,7 +1038,7 @@ export function HomePage({
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Finale Workspace Location in Eldoret, Kenya"
+          title="WorkNest Co-working space Location in Eldoret, Kenya"
         />
       </section>
     </div>

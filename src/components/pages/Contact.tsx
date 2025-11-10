@@ -60,10 +60,10 @@ export function Contact() {
                   <div>
                     <h4 className="text-[#5C4033] mb-1">Email</h4>
                     <p className="text-[#5C4033]/70">
-                      hello@finaleworkspace.co.ke
+                      info@theworknest.co.ke
                     </p>
                     <p className="text-[#5C4033]/70">
-                      bookings@finaleworkspace.co.ke
+                      bookings@theworknest..co.ke
                     </p>
                   </div>
                 </div>
@@ -75,9 +75,7 @@ export function Contact() {
                   <div>
                     <h4 className="text-[#5C4033] mb-1">Address</h4>
                     <p className="text-[#5C4033]/70">
-                      The   WorkNest Co-working space
-                      <br />
-                      Eldoret
+                      The WorkNest Co-working space
                       <br />
                       Eldoret, Kenya
                     </p>
@@ -90,11 +88,11 @@ export function Contact() {
                 <div className="space-y-2">
                   <div className="flex justify-between">
                     <span className="text-[#5C4033]/70">Monday - Friday</span>
-                    <span className="text-[#5C4033]">8:00 AM - 6:00 PM</span>
+                    <span className="text-[#5C4033]">8:00 AM - 8:00 PM</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-[#5C4033]/70">Saturday</span>
-                    <span className="text-[#5C4033]">9:00 AM - 2:00 PM</span>
+                    <span className="text-[#5C4033]">9:00 AM - 5:00 PM</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-[#5C4033]/70">Sunday</span>

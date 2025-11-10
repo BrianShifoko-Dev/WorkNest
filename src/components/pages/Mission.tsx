@@ -33,7 +33,7 @@ export function Mission({ onNavigate }: { onNavigate: (page: string) => void }) 
                   where every member can thrive and achieve their full potential.
                 </p>
                 <p className="text-[#5C4033]/70">
-                  We believe that the right workspace isn't just about desks and chairs—it's about 
+                  We believe that the right workspace isn't just about desks and chairs it's about 
                   creating an ecosystem that supports success, encourages community, and inspires excellence.
                 </p>
               </div>
@@ -60,7 +60,7 @@ export function Mission({ onNavigate }: { onNavigate: (page: string) => void }) 
                 <h3 className="mb-3">Vision Statement</h3>
                 <p className="text-white/90 italic">
                   "To be East Africa's leading workspace provider, recognized for our commitment to 
-                  excellence, innovation, and community building—where every professional finds their 
+                  excellence, innovation, and community building where every professional finds their 
                   perfect space to succeed."
                 </p>
               </div>

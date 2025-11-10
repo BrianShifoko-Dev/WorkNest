@@ -316,10 +316,10 @@ export function Restaurant() {
             <div className="grid md:grid-cols-2 gap-4">
               <div className="p-4 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-lg">
                 <p className="text-[#5C4033]">Monday - Friday</p>
-                <p className="text-sm text-[#5C4033]/80">7:00 AM - 7:00 PM</p>
+                <p className="text-sm text-[#5C4033]/80">8:00 AM - 8:00 PM</p>
               </div>
               <div className="p-4 bg-[#D4AF37]/10 border border-[#D4AF37]/30 rounded-lg">
-                <p className="text-[#5C4033]">Saturday - Sunday</p>
+                <p className="text-[#5C4033]">Saturday</p>
                 <p className="text-sm text-[#5C4033]/80">9:00 AM - 5:00 PM</p>
               </div>
             </div>

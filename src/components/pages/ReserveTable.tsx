@@ -72,7 +72,7 @@ export function ReserveTable({ onNavigate }: { onNavigate: (page: string) => voi
             <Utensils className="w-16 h-16 mx-auto mb-4 text-[#D4AF37]" />
             <h1 className="text-5xl mb-4">Reserve Your Table</h1>
             <p className="text-xl max-w-3xl mx-auto">
-              Enjoy premium dining in Eldoret's finest workspace restaurant
+              Enjoy premium dining in Eldoret's The WorkNest co-working Space restaurant
             </p>
           </div>
         </div>

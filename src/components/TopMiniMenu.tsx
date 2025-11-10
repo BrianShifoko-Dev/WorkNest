@@ -44,7 +44,7 @@ export function TopMiniMenu() {
             </a>
             <div className="flex items-center gap-2">
               <Clock className="w-3.5 h-3.5 text-[#D4AF37]" />
-              <span>Mon-Fri: 8AM - 6PM</span>
+              <span>Mon-Fri: 8AM - 8PM</span>
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="w-3.5 h-3.5 text-[#D4AF37]" />

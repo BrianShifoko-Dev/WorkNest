@@ -47,9 +47,9 @@ export function AboutUs({ onNavigate }: { onNavigate: (page: string) => void }) 
         />
         <div className="absolute inset-0 z-20 flex items-center justify-center">
           <div className="text-center text-white px-4">
-            <h1 className="text-5xl mb-4">About Finale Workspace</h1>
+            <h1 className="text-5xl mb-4">About The WorkNest</h1>
             <p className="text-xl max-w-2xl mx-auto">
-              Redefining workspace excellence in Kenya since 2020
+              Redefining co-working space excellence in Eldoret, Kenya since 2025
             </p>
           </div>
         </div>
@@ -63,20 +63,20 @@ export function AboutUs({ onNavigate }: { onNavigate: (page: string) => void }) 
             <h2 className="text-center text-[#5C4033] mb-6">Our Story</h2>
             <div className="prose prose-lg mx-auto text-[#5C4033]/70">
               <p className="mb-4">
-                Finale Workspace Kenya was born from a simple observation: Nairobi's professionals 
-                deserved workspace solutions that matched their ambition and drive. In 2020, we opened 
-                our doors with a mission to create more than just office space—we wanted to build a 
+                The WorkNest co-working space Kenya was born from a simple observation: Eldoret's professionals 
+                deserved co-working solutions that matched their ambition and drive. In 2025, we opened 
+                our doors with a mission to create more than just office space we wanted to build a 
                 community where innovation thrives and businesses flourish.
               </p>
               <p className="mb-4">
-                What started as a single location in Westlands has grown into Kenya's premier workspace 
+                What started as a single location in Eldoret has grown into Kenya's premier co-working space 
                 provider, serving hundreds of professionals, entrepreneurs, and companies. Our success 
                 is built on a foundation of exceptional service, world-class facilities, and an 
                 unwavering commitment to our members' success.
               </p>
               <p>
-                Today, Finale Workspace stands as a testament to what's possible when vision meets 
-                execution. We're not just providing desks and offices—we're creating an ecosystem 
+                Today, The WorkNest co-Working stands as a testament to what's possible when vision meets 
+                execution. We're not just providing desks and offices we're creating an ecosystem 
                 where businesses grow, relationships form, and dreams become reality.
               </p>
             </div>
