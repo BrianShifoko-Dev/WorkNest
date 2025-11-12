@@ -75,7 +75,7 @@ export function Contact() {
                   <div>
                     <h4 className="text-[#5C4033] mb-1">Address</h4>
                     <p className="text-[#5C4033]/70">
-                      The WorkNest Co-working space
+                      The WorkNest Coworking space
                       <br />
                       Eldoret, Kenya
                     </p>

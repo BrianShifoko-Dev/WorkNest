@@ -150,7 +150,7 @@ export function MainNavbar({ currentPage, onNavigate }: MainNavbarProps) {
                 <div className="text-2xl text-[#5C4033] font-bold">
                   The WorkNest
                 </div>
-                <div className="text-2xs text-[#8B7355]">Co-working space</div>
+                <div className="text-2xs text-[#8B7355]">Coworking space</div>
               </div>
             </div>
           </div>

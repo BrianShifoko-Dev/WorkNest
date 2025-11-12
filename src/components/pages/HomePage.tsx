@@ -375,10 +375,7 @@ export function HomePage({
               A Space Where Productivity Meets Comfort in Kenya
             </h2>
             <p className="text-[#5C4033]/80">
-              WorkNest co-Working space Kenya redefines professional environments in
-              Eldoret. We combine world-class amenities with authentic Kenyan
-              hospitality to create spaces where businesses thrive and
-              communities flourish.
+              At The WorkNest Eldoret, we redefine professional environments in Kenya’s vibrant western hub. Our world-class amenities blend seamlessly with authentic Kenyan hospitality, creating spaces where businesses thrive, ideas grow, and communities flourish
             </p>
           </div>
 
@@ -392,8 +389,7 @@ export function HomePage({
               </div>
               <h3 className="text-[#5C4033] mb-3">Who We Are</h3>
               <p className="text-sm text-[#5C4033]/70 mb-4">
-                Kenya's premier luxury workspace provider, offering flexible
-                solutions for modern professionals and businesses.
+                The WorkNest Eldoret is a premium coworking and innovation space in Elgon View, offering flexible, executive-grade workspaces that inspire productivity, collaboration, and growth. From hot desks and private offices to meeting suites, event spaces, and a kids’ zone, every detail is designed to help businesses thrive and ideas take flight.
               </p>
             </Card>
 
@@ -406,8 +402,7 @@ export function HomePage({
               </div>
               <h3 className="text-[#5C4033] mb-3">Our Mission</h3>
               <p className="text-sm text-[#5C4033]/70 mb-4">
-                To empower entrepreneurs and teams with inspiring workspaces
-                that foster collaboration, innovation, and success.
+                To provide flexible, world-class workspaces that enhance productivity, foster meaningful connections, and support growth through exceptional service, modern design, and a vibrant community.
               </p>
             </Card>
 
@@ -420,8 +415,7 @@ export function HomePage({
               </div>
               <h3 className="text-[#5C4033] mb-3">Our Vision</h3>
               <p className="text-sm text-[#5C4033]/70 mb-4">
-                To be East Africa's most trusted and innovative workspace brand,
-                setting new standards in business hospitality.
+                To be Kenya’s leading hub for innovation and collaboration empowering professionals, entrepreneurs, and businesses to thrive in a dynamic, inspiring workspace.
               </p>
             </Card>
           </div>
@@ -561,7 +555,7 @@ export function HomePage({
       <section className="py-16 bg-[#FFFFF0]" data-section="why-choose-us">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-[#5C4033] mb-4">Why Choose WorkNest co-working space</h2>
+            <h2 className="text-[#5C4033] mb-4">Why choose The WorkNest coworking space</h2>
             <p className="text-[#5C4033]/70 max-w-2xl mx-auto">
               Experience the difference that premium amenities and thoughtful
               design make
@@ -626,7 +620,7 @@ export function HomePage({
               data-amenity="access"
             >
               <Clock className="w-6 h-6 text-[#D4AF37] mx-auto mb-2" />
-              <p className="text-sm text-[#5C4033]">24/7 Access</p>
+              <p className="text-sm text-[#5C4033]">Convenient Access Hours</p>
             </div>
             <div
               className="text-center p-4 bg-white rounded-lg"
@@ -715,7 +709,7 @@ export function HomePage({
               <ReviewCard
                 challenge="Our startup needed a professional space without the long-term commitment and high costs of a traditional office."
                 solution="Finale provided us with a flexible monthly plan in a beautiful private office, complete with meeting rooms and all amenities."
-                testimonial="WorkNest co-working space has been instrumental in our growth. The environment is professional yet welcoming, and the flexibility is exactly what we needed."
+                testimonial="WorkNest coworking space has been instrumental in our growth. The environment is professional yet welcoming, and the flexibility is exactly what we needed."
                 clientName="Sarah Kamau"
                 clientRole="CEO, Tech Startup"
               />
@@ -747,7 +741,7 @@ export function HomePage({
               <ReviewCard
                 challenge="We wanted to host a product launch event but couldn't find a venue that offered both elegance and modern technology."
                 solution="Finale's event space provided the perfect blend of sophistication and functionality, with excellent AV equipment and catering options."
-                testimonial="Our event was a huge success! The team at WorkNest Co-working space went above and beyond to ensure everything was perfect."
+                testimonial="Our event was a huge success! The team at WorkNest Coworking space went above and beyond to ensure everything was perfect."
                 clientName="Grace Wanjiru"
                 clientRole="Marketing Director"
               />
@@ -1038,7 +1032,7 @@ export function HomePage({
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="WorkNest Co-working space Location in Eldoret, Kenya"
+          title="WorkNest Coworking space Location in Eldoret, Kenya"
         />
       </section>
     </div>

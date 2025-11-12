@@ -58,18 +58,13 @@ export function DiscoverUs({ onNavigate }: { onNavigate: (page: string) => void 
             <div>
               <h2 className="text-[#5C4033] mb-6">Who We Are</h2>
               <p className="text-[#5C4033]/70 mb-4">
-                Finale Workspace Kenya was founded with a vision to transform the way professionals work 
-                in Nairobi. We believe that your workspace should be more than just a desk—it should be 
-                a community, an inspiration, and a catalyst for success.
+                The WorkNest is a premium coworking and innovation space in the prestigious Elgon View. We offer flexible, executive-grade workspace designed to boost productivity, collaboration, and business growth.
               </p>
               <p className="text-[#5C4033]/70 mb-4">
-                Since our inception, we've been committed to providing premium coworking solutions that 
-                combine luxury, functionality, and flexibility. Our state-of-the-art facilities are designed 
-                to meet the diverse needs of freelancers, startups, and established enterprises.
+                Our facilities include Hot desk, Private offices, Meeting suites, event space, a lounge, an Eatery, and a Kids' zone all thoughtfully designed with ergonomic furniture, high speed internet, natural light, and inspiring views
               </p>
               <p className="text-[#5C4033]/70">
-                Located in the vibrant Westlands district, we're at the heart of Nairobi's business ecosystem, 
-                offering easy access to major transport links, restaurants, and amenities.
+                At The WorkNest, we provide the ideal environment for business to thrive, team to connect, and ideas to grow.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -96,18 +91,14 @@ export function DiscoverUs({ onNavigate }: { onNavigate: (page: string) => void 
               <Target className="w-12 h-12 text-[#D4AF37] mb-4" />
               <h3 className="text-[#5C4033] mb-4">Our Mission</h3>
               <p className="text-[#5C4033]/70">
-                To empower professionals and businesses by providing world-class workspace solutions 
-                that foster innovation, collaboration, and growth. We strive to create an environment 
-                where every member can thrive and achieve their full potential.
+                To provide flexible, world-class workspaces that enhance productivity, foster meaningful connections, and support growth through exceptional service, modern design, and a vibrant community.
               </p>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-lg border border-[#5C4033]/10">
               <Eye className="w-12 h-12 text-[#D4AF37] mb-4" />
               <h3 className="text-[#5C4033] mb-4">Our Vision</h3>
               <p className="text-[#5C4033]/70">
-                To be East Africa's leading workspace provider, recognized for our commitment to 
-                excellence, innovation, and community building. We envision a future where flexible, 
-                premium workspaces are accessible to all professionals across Kenya and beyond.
+                To be Kenya’s leading hub for innovation and collaboration empowering professionals, entrepreneurs, and businesses to thrive in a dynamic, inspiring workspace.
               </p>
             </div>
           </div>

@@ -36,7 +36,7 @@ const translations: Translations = {
   "booking.guests": { en: "Guests", sw: "Wageni", fr: "Invités", es: "Huéspedes", de: "Gäste", pt: "Hóspedes" },
   
   // Footer
-  "footer.copyright": { en: "© 2025 WorkNest Co-Working space Kenya. All rights reserved.", sw: "© 2025 WorkNest Co-Working space Kenya. Haki zote zimehifadhiwa.", fr: "© 2025 Finale Workspace Kenya. Tous droits réservés.", es: "© 2025 Finale Workspace Kenya. Todos los derechos reservados.", de: "© 2025 Finale Workspace Kenya. Alle Rechte vorbehalten.", pt: "© 2025 Finale Workspace Kenya. Todos os direitos reservados." },
+  "footer.copyright": { en: "© 2025 WorkNest CoWorking space Kenya. All rights reserved.", sw: "© 2025 WorkNest CoWorking space Kenya. Haki zote zimehifadhiwa.", fr: "© 2025 Finale Workspace Kenya. Tous droits réservés.", es: "© 2025 Finale Workspace Kenya. Todos los derechos reservados.", de: "© 2025 Finale Workspace Kenya. Alle Rechte vorbehalten.", pt: "© 2025 Finale Workspace Kenya. Todos os direitos reservados." },
   "footer.termsOfService": { en: "Terms of Service", sw: "Masharti ya Huduma", fr: "Conditions d'utilisation", es: "Términos de servicio", de: "Nutzungsbedingungen", pt: "Termos de serviço" },
   "footer.privacyPolicy": { en: "Privacy Policy", sw: "Sera ya Faragha", fr: "Politique de confidentialité", es: "Política de privacidad", de: "Datenschutzrichtlinie", pt: "Política de privacidade" },
 };

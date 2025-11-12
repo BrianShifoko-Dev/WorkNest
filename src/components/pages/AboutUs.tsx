@@ -4,32 +4,32 @@ import { Button } from "../ui/button";
 
 export function AboutUs({ onNavigate }: { onNavigate: (page: string) => void }) {
   const milestones = [
-    { year: "2020", title: "Founded", description: "Finale Workspace was established in Nairobi" },
-    { year: "2021", title: "Expansion", description: "Opened our flagship location in Westlands" },
-    { year: "2023", title: "Award Winning", description: "Named Best Coworking Space in East Africa" },
-    { year: "2025", title: "Community Growth", description: "Over 500 members and growing" },
+    { year: "2025", title: "Founded", description: "The WorkNest Coworking space was established in Eldoret." },
+    //{ year: "2026", title: "Expansion", description: "Opened our flagship location in Eldoret" },
+    //{ year: "2027", title: "Award Winning", description: "Named Best Coworking Space in East Africa" },
+    //{ year: "2028", title: "Community Growth", description: "Over 500 members and growing" },
   ];
 
   const values = [
     {
       icon: Award,
       title: "Excellence",
-      description: "We strive for excellence in everything we do, from our facilities to our service.",
+      description: "Premium space and services, every time",
     },
     {
       icon: Users,
-      title: "Community",
-      description: "Building a supportive community of professionals who inspire and empower each other.",
+      title: "Collaboration",
+      description: "Building connections that drive growth.",
     },
     {
       icon: Target,
       title: "Innovation",
-      description: "Embracing new ideas and technologies to enhance the workspace experience.",
+      description: "Inspiring creativity and forward-thinking solutions.",
     },
     {
       icon: TrendingUp,
-      title: "Growth",
-      description: "Supporting the growth and success of every member of our community.",
+      title: "Flexibility",
+      description: "Space designed to adapt to your needs",
     },
   ];
 
@@ -49,7 +49,7 @@ export function AboutUs({ onNavigate }: { onNavigate: (page: string) => void }) 
           <div className="text-center text-white px-4">
             <h1 className="text-5xl mb-4">About The WorkNest</h1>
             <p className="text-xl max-w-2xl mx-auto">
-              Redefining co-working space excellence in Eldoret, Kenya since 2025
+              Redefining coworking space excellence in Eldoret, Kenya since 2025
             </p>
           </div>
         </div>
@@ -63,21 +63,10 @@ export function AboutUs({ onNavigate }: { onNavigate: (page: string) => void }) 
             <h2 className="text-center text-[#5C4033] mb-6">Our Story</h2>
             <div className="prose prose-lg mx-auto text-[#5C4033]/70">
               <p className="mb-4">
-                The WorkNest co-working space Kenya was born from a simple observation: Eldoret's professionals 
-                deserved co-working solutions that matched their ambition and drive. In 2025, we opened 
-                our doors with a mission to create more than just office space we wanted to build a 
-                community where innovation thrives and businesses flourish.
+                The WorkNest Eldoret was born from a vision to create a workspace where businesses, entrepreneurs, and professionals could thrive in comfort, creativity, and collaboration. Located in the prestigious Elgon View, we designed every space from private offices and meeting rooms to hot desks and a kids’ zone to inspire productivity and connection.
               </p>
               <p className="mb-4">
-                What started as a single location in Eldoret has grown into Kenya's premier co-working space 
-                provider, serving hundreds of professionals, entrepreneurs, and companies. Our success 
-                is built on a foundation of exceptional service, world-class facilities, and an 
-                unwavering commitment to our members' success.
-              </p>
-              <p>
-                Today, The WorkNest co-Working stands as a testament to what's possible when vision meets 
-                execution. We're not just providing desks and offices we're creating an ecosystem 
-                where businesses grow, relationships form, and dreams become reality.
+                Our journey began with a simple idea: workspaces should do more than house desks they should foster growth, innovation, and community. Today, The WorkNest stands as a hub where ideas flourish, teams connect, and businesses reach their full potential.
               </p>
             </div>
           </div>

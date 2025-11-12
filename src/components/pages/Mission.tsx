@@ -28,9 +28,7 @@ export function Mission({ onNavigate }: { onNavigate: (page: string) => void }) 
                 <div className="w-16 h-1 bg-[#D4AF37] mb-6" />
                 <h2 className="text-[#5C4033] mb-6">Our Mission</h2>
                 <p className="text-[#5C4033]/70 mb-4">
-                  To empower professionals and businesses by providing world-class workspace solutions 
-                  that foster innovation, collaboration, and growth. We strive to create an environment 
-                  where every member can thrive and achieve their full potential.
+                  To provide flexible, world-class workspaces that enhance productivity, foster meaningful connections, and support growth through exceptional service, modern design, and a vibrant community.
                 </p>
                 <p className="text-[#5C4033]/70">
                   We believe that the right workspace isn't just about desks and chairs it's about 
@@ -41,7 +39,7 @@ export function Mission({ onNavigate }: { onNavigate: (page: string) => void }) 
                 <Target className="w-12 h-12 text-[#D4AF37] mb-4" />
                 <h3 className="text-[#5C4033] mb-3">Mission Statement</h3>
                 <p className="text-[#5C4033]/80 italic">
-                  "To be the catalyst for professional success in Kenya by delivering premium workspace 
+                  "To be the catalyst for professional success in Kenya by delivering premium co-working space 
                   solutions, fostering meaningful connections, and creating an environment where innovation thrives."
                 </p>
               </div>
@@ -59,16 +57,14 @@ export function Mission({ onNavigate }: { onNavigate: (page: string) => void }) 
                 <Eye className="w-12 h-12 text-[#D4AF37] mb-4" />
                 <h3 className="mb-3">Vision Statement</h3>
                 <p className="text-white/90 italic">
-                  "To be East Africa's leading workspace provider, recognized for our commitment to 
-                  excellence, innovation, and community building where every professional finds their 
-                  perfect space to succeed."
+                  "To be Kenya’s leading hub for innovation and collaboration empowering professionals, entrepreneurs, and businesses to thrive in a dynamic, inspiring workspace."
                 </p>
               </div>
               <div>
                 <div className="w-16 h-1 bg-[#D4AF37] mb-6" />
                 <h2 className="text-[#5C4033] mb-6">Our Vision</h2>
                 <p className="text-[#5C4033]/70 mb-4">
-                  We envision a future where flexible, premium workspaces are accessible to all 
+                  We envision a future where flexible, premium coworking space accessible to all 
                   professionals across Kenya and beyond. A future where work is not confined to 
                   traditional offices, but flourishes in dynamic, collaborative environments.
                 </p>
